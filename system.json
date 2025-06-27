@@ -1,12 +1,12 @@
 {
-    "name": "burningwheel",
-    "title": "The Burning Wheel",
-    "description": "Community Foundry implementation of The Burning Wheel",
-    "version": "1.5.8",
+    "name": "stargaze",
+    "title": "The Stargaze",
+    "description": "The Stargaze implementation based on Community Foundry implementation of The Burning Wheel",
+    "version": "0.0.1",
     "authors": [
         {
-            "name": "Stas Tserkovny",
-            "url": "https://github.com/StasTserk/foundry-burningwheel"
+            "name": "TommyUnreal",
+            "url": "https://github.com/TommyUnreal/foundry-stargaze"
         }
     ],
     "esmodules": ["burningwheel.js"],
@@ -22,12 +22,12 @@
     "packs": [],
     "compatibility": {
         "minimum": 12,
-        "verified": "12.331"
+        "verified": "12.343"
     },
     "socket": true,
     "initiative": "1d20",
-    "grid": { "distance": 10, "units": "ft" },
-    "url": "https://github.com/StasTserk/foundry-burningwheel",
-    "manifest": "https://raw.githubusercontent.com/StasTserk/foundry-burningwheel/master/system.json",
-    "download": "https://github.com/StasTserk/foundry-burningwheel/releases/download/1.5.8/release1.5.8.zip"
+    "grid": {
+        "distance": 1,
+        "units": "m"
+    }
 }
