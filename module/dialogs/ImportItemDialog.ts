@@ -106,7 +106,7 @@ export async function addNewItem(options: AddItemOptions): Promise<unknown> {
         );
 
         const html = await renderTemplate(
-            'systems/burningwheel/templates/dialogs/new-item-dialog.hbs',
+            'systems/stargaze/templates/dialogs/new-item-dialog.hbs',
             {
                 searchTitle: options.searchTitle,
                 items: items.map((i) => ItemToRowData(i, options)),

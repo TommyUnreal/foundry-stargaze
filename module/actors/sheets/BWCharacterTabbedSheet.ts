@@ -3,7 +3,7 @@ import { BWCharacterSheet } from './BWCharacterSheet';
 
 export class BWCharacterTabbedSheet extends BWCharacterSheet {
     get template(): string {
-        const path = 'systems/burningwheel/templates';
+        const path = 'systems/stargaze/templates';
         return `${path}/${this.actor.type}-tabbed-sheet.hbs`;
     }
 

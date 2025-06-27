@@ -12,7 +12,7 @@ export async function buildHelpDialog({
         exponent,
     };
     const content = await renderTemplate(
-        'systems/burningwheel/templates/dialogs/help-dialog.hbs',
+        'systems/stargaze/templates/dialogs/help-dialog.hbs',
         data
     );
     const help = game.i18n.localize('BW.roll.help');

@@ -7,7 +7,7 @@ export class TraitSheet extends BWItemSheet {
     }
 
     get template(): string {
-        return 'systems/burningwheel/templates/items/trait.hbs';
+        return 'systems/stargaze/templates/items/trait.hbs';
     }
 
     getData(): TraitSheetData {

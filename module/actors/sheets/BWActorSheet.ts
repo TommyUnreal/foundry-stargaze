@@ -16,7 +16,7 @@ export class BWActorSheet<
     private _keyUpHandler = this._handleKeyUp.bind(this);
 
     get template(): string {
-        const path = 'systems/burningwheel/templates';
+        const path = 'systems/stargaze/templates';
         return `${path}/${this.actor.type}-sheet.hbs`;
     }
 

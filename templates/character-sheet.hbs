@@ -1,51 +1,56 @@
 <form autocomplete="off" class="character">
     {{#if system.settings.showSettings}}
-    {{> "systems/burningwheel/templates/sections/character-settings.hbs"}}
+    {{> "systems/stargaze/templates/sections/character-settings.hbs"}}
     {{/if}}
 
     {{!-- Character header --}}
-    {{> "systems/burningwheel/templates/sections/header.hbs"}}
+    {{> "systems/stargaze/templates/sections/header.hbs"}}
 
-{{#if isObserver}}
-    {{!-- Beliefs Sheet Section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
-{{> "systems/burningwheel/templates/sections/beliefs.hbs"}}
+    {{#if isObserver}}
+    {{!-- Beliefs Sheet Section - funny indentation to avoid problems with
+    textareas inserting extra whitespace. --}}
+    {{> "systems/stargaze/templates/sections/beliefs.hbs"}}
 
-    {{!-- Instincts Sheet Section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
-{{> "systems/burningwheel/templates/sections/instincts.hbs"}}
+    {{!-- Instincts Sheet Section - funny indentation to avoid problems with
+    textareas inserting extra whitespace. --}}
+    {{> "systems/stargaze/templates/sections/instincts.hbs"}}
 
     {{!-- Traits Sheet Section --}}
-    {{> "systems/burningwheel/templates/sections/traits.hbs"}}
+    {{> "systems/stargaze/templates/sections/traits.hbs"}}
 
     {{!-- Stats Section --}}
-    {{> "systems/burningwheel/templates/sections/stats.hbs"}}
+    {{> "systems/stargaze/templates/sections/stats.hbs"}}
 
     {{!-- Attributes Section --}}
-    {{> "systems/burningwheel/templates/sections/attributes.hbs"}}
+    {{> "systems/stargaze/templates/sections/attributes.hbs"}}
 
     {{!-- Relationships, Reputations and Affiliations Section --}}
-    {{> "systems/burningwheel/templates/sections/social.hbs"}}
+    {{> "systems/stargaze/templates/sections/social.hbs"}}
 
     {{!-- Gear section --}}
-    {{> "systems/burningwheel/templates/sections/gear.hbs"}}
+    {{> "systems/stargaze/templates/sections/gear.hbs"}}
 
     {{!-- Spells Section --}}
-    {{> "systems/burningwheel/templates/sections/spells.hbs"}}
+    {{> "systems/stargaze/templates/sections/spells.hbs"}}
 
-    {{!-- Misc Section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
-{{> "systems/burningwheel/templates/sections/misc.hbs"}}
+    {{!-- Misc Section - funny indentation to avoid problems with textareas
+    inserting extra whitespace. --}}
+    {{> "systems/stargaze/templates/sections/misc.hbs"}}
 
     {{!-- Skills Section --}}
-    {{> "systems/burningwheel/templates/sections/skills.hbs"}}
+    {{> "systems/stargaze/templates/sections/skills.hbs"}}
 
-    {{!-- Learning Section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
-{{> "systems/burningwheel/templates/sections/learning.hbs"}}
+    {{!-- Learning Section - funny indentation to avoid problems with textareas
+    inserting extra whitespace. --}}
+    {{> "systems/stargaze/templates/sections/learning.hbs"}}
 
-    {{!-- PTGS section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
-{{> "systems/burningwheel/templates/sections/ptgs.hbs"}}
+    {{!-- PTGS section - funny indentation to avoid problems with textareas
+    inserting extra whitespace. --}}
+    {{> "systems/stargaze/templates/sections/ptgs.hbs"}}
 
     {{!-- Weapons and Armor Section --}}
-    {{> "systems/burningwheel/templates/sections/weapons-and-armor.hbs"}}
-{{/if}}
+    {{> "systems/stargaze/templates/sections/weapons-and-armor.hbs"}}
+    {{/if}}
     <hr>
-    {{> "systems/burningwheel/templates/sections/footer.hbs" }}
+    {{> "systems/stargaze/templates/sections/footer.hbs" }}
 </form>

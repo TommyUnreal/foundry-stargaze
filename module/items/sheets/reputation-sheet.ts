@@ -16,7 +16,7 @@ export class ReputationSheet extends BWItemSheet {
     }
 
     get template(): string {
-        return 'systems/burningwheel/templates/items/reputation.hbs';
+        return 'systems/stargaze/templates/items/reputation.hbs';
     }
 }
 

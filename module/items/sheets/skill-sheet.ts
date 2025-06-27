@@ -8,7 +8,7 @@ export class SkillSheet extends BWItemSheet {
     }
 
     get template(): string {
-        return 'systems/burningwheel/templates/items/skill.hbs';
+        return 'systems/stargaze/templates/items/skill.hbs';
     }
 
     getData(): SkillSheetData {

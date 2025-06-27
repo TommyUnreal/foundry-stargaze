@@ -42,7 +42,7 @@ export class CharacterBurnerDialog extends Application {
 
     static async Open(parent: BWCharacter): Promise<Application> {
         const html = await renderTemplate(
-            'systems/burningwheel/templates/dialogs/compendium-select.hbs',
+            'systems/stargaze/templates/dialogs/compendium-select.hbs',
             { compendiums: getCompendiumList() }
         );
         const compendiumSelect = new Dialog({
@@ -110,7 +110,7 @@ export class CharacterBurnerDialog extends Application {
     }
 
     get template(): string {
-        return 'systems/burningwheel/templates/dialogs/character-burner.hbs';
+        return 'systems/stargaze/templates/dialogs/character-burner.hbs';
     }
 
     static get defaultOptions(): Application.Options {

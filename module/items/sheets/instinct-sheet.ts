@@ -7,6 +7,6 @@ export class InstinctSheet extends BWItemSheet {
     }
 
     get template(): string {
-        return 'systems/burningwheel/templates/items/instinct.hbs';
+        return 'systems/stargaze/templates/items/instinct.hbs';
     }
 }

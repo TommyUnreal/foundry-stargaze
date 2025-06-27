@@ -316,7 +316,7 @@ export class FightDialog extends ExtendedTestDialog<FightDialogData> {
     };
 
     get template(): string {
-        return 'systems/burningwheel/templates/dialogs/fight.hbs';
+        return 'systems/stargaze/templates/dialogs/fight.hbs';
     }
 
     static get defaultOptions(): Dialog.Options {

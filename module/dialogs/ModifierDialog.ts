@@ -15,8 +15,7 @@ export class ModifierDialog extends Application {
         help?: HelpRecord[]
     ) {
         super({
-            template:
-                'systems/burningwheel/templates/dialogs/mods-and-help.hbs',
+            template: 'systems/stargaze/templates/dialogs/mods-and-help.hbs',
             popOut: false,
         });
         this.mods = mods || [];

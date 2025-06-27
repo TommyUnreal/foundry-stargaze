@@ -150,8 +150,8 @@ export const equipmentSheetOrder = {
 
 export const shadesSelect = { B: 'BW.black', G: 'BW.grey', W: 'BW.white' };
 
-export const systemName = 'burningwheel';
-export const socketName = 'system.burningwheel';
+export const systemName = 'stargaze';
+export const socketName = 'system.stargaze';
 export const settings = {
     version: 'version',
     duelData: 'dow-data',

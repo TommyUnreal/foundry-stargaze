@@ -45,7 +45,7 @@ export async function simpleBroadcast(
     actor?: BWActor
 ): Promise<ChatMessage | null> {
     const html = await renderTemplate(
-        'systems/burningwheel/templates/chat/simple-broadcast.hbs',
+        'systems/stargaze/templates/chat/simple-broadcast.hbs',
         data
     );
     return ChatMessage.create({

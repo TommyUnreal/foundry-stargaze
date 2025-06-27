@@ -12,7 +12,7 @@ export class MeleeWeaponSheet extends BWItemSheet {
     }
 
     get template(): string {
-        return 'systems/burningwheel/templates/items/meleeWeapon.hbs';
+        return 'systems/stargaze/templates/items/meleeWeapon.hbs';
     }
 
     getData(): MeleeSheetData {

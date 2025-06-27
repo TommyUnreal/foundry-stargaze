@@ -17,7 +17,7 @@ export class RangeAndCoverDialog extends ExtendedTestDialog<RangeAndCoverData> {
     data: RangeAndCoverDialogData;
 
     get template(): string {
-        return 'systems/burningwheel/templates/dialogs/range-and-cover.hbs';
+        return 'systems/stargaze/templates/dialogs/range-and-cover.hbs';
     }
 
     activateSocketListeners(): void {

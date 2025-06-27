@@ -8,7 +8,7 @@ export class SpellSheet extends BWItemSheet {
     }
 
     get template(): string {
-        return 'systems/burningwheel/templates/items/spell.hbs';
+        return 'systems/stargaze/templates/items/spell.hbs';
     }
 
     getData(): TraitSheetData {

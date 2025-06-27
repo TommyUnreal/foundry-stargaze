@@ -3,7 +3,7 @@ import { BWItemSheet, BWItemSheetData } from './bwItemSheet';
 
 export class RangedWeaponSheet extends BWItemSheet {
     get template(): string {
-        return 'systems/burningwheel/templates/items/rangedWeapon.hbs';
+        return 'systems/stargaze/templates/items/rangedWeapon.hbs';
     }
 
     getData(): RangedSheetData {
