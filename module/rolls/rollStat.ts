@@ -127,6 +127,7 @@ async function statRollCallback(
         persona,
         deeds,
         addHelp,
+        recording,
         difficultyTestTotal,
     } = extractRollData(dialogHtml);
 
@@ -165,18 +166,20 @@ async function statRollCallback(
         };
     });
 
-    await actor.addStatTest(
-        stat,
-        name,
-        accessor,
-        difficultyGroup,
-        isSuccessful
-    );
-    if (addHelp) {
-        game.burningwheel.modifiers.grantTests(
-            difficultyTestTotal,
+    if (recording) {
+        await actor.addStatTest(
+            stat,
+            name,
+            accessor,
+            difficultyGroup,
             isSuccessful
         );
+        if (addHelp) {
+            game.burningwheel.modifiers.grantTests(
+                difficultyTestTotal,
+                isSuccessful
+            );
+        }
     }
 
     actor.updateArthaForStat(accessor, persona, deeds);

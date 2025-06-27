@@ -138,18 +138,20 @@ async function attrRollCallback(
         };
     });
 
-    await actor.addAttributeTest(
-        stat,
-        name,
-        accessor,
-        rollData.difficultyGroup,
-        isSuccessful
-    );
-    if (rollData.addHelp) {
-        game.burningwheel.modifiers.grantTests(
-            rollData.difficultyTestTotal,
+    if (rollData.recording) {
+        await actor.addAttributeTest(
+            stat,
+            name,
+            accessor,
+            rollData.difficultyGroup,
             isSuccessful
         );
+        if (rollData.addHelp) {
+            game.burningwheel.modifiers.grantTests(
+                rollData.difficultyTestTotal,
+                isSuccessful
+            );
+        }
     }
 
     actor.updateArthaForStat(accessor, rollData.persona, rollData.deeds);

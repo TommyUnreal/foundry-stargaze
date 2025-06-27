@@ -224,6 +224,7 @@ Item:
     root2: ''
     learning: false
     learningProgress: 0
+    recording: false
     skilltype: 'academic'
     training: false
     magical: false
