@@ -11,6 +11,7 @@ dist
 
 # user config file
 foundryconfig.json
+how_to_build.txt
 
 # default deploy destination
 release/
