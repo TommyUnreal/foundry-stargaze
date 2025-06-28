@@ -7,8 +7,6 @@
         {
             "name": "TommyUnreal",
             "url": "https://github.com/TommyUnreal/foundry-stargaze"
-            "name": "TommyUnreal",
-            "url": "https://github.com/TommyUnreal/foundry-stargaze"
         }
     ],
     "esmodules": ["burningwheel.js"],
@@ -25,14 +23,9 @@
     "compatibility": {
         "minimum": 12,
         "verified": "12.343"
-        "verified": "12.343"
     },
     "socket": true,
     "initiative": "1d20",
-    "grid": {
-        "distance": 1,
-        "units": "m"
-    }
     "grid": {
         "distance": 1,
         "units": "m"

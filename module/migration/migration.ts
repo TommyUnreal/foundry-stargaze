@@ -42,6 +42,8 @@ export function registerTask(version: string, task: () => Promise<void>): void {
     migrationRoutines[version] = task;
 }
 
+/*
+
 import { task021 } from './task021';
 import { task022 } from './task022';
 import { task041 } from './task041';
@@ -55,3 +57,5 @@ registerTask('0.4.1', task041);
 registerTask('0.6.1', task061);
 registerTask('0.6.3', task063);
 registerTask('1.2.0', task120);
+
+*/
