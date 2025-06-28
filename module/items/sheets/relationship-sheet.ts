@@ -16,7 +16,7 @@ export class RelationshipSheet extends BWItemSheet {
     }
 
     get template(): string {
-        return 'systems/burningwheel/templates/items/relationship.hbs';
+        return 'systems/stargaze/templates/items/relationship.hbs';
     }
 }
 

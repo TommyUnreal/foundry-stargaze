@@ -7,7 +7,7 @@ import { BWItemSheet, BWItemSheetData } from './bwItemSheet';
 
 export class ArmorSheet extends BWItemSheet {
     get template(): string {
-        return 'systems/burningwheel/templates/items/armor.hbs';
+        return 'systems/stargaze/templates/items/armor.hbs';
     }
 
     getData(): MeleeSheetData {

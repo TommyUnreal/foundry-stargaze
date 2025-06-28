@@ -512,3 +512,7 @@ BW:
     newModifier: New Modifier
     helpingDice: Helping Dice
     helpedWith: Helped with
+  stargaze:
+    rollDialog:
+      sectionText: Record for a Skill Test
+      checkBoxLabel: Record Roll

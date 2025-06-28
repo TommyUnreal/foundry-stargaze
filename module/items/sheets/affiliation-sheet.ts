@@ -2,7 +2,7 @@ import { BWItemSheet, BWItemSheetData } from './bwItemSheet';
 
 export class AffiliationSheet extends BWItemSheet {
     get template(): string {
-        return 'systems/burningwheel/templates/items/affiliation.hbs';
+        return 'systems/stargaze/templates/items/affiliation.hbs';
     }
 
     getData(): BWItemSheetData & {

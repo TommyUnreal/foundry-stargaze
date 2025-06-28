@@ -138,13 +138,15 @@ async function attrRollCallback(
         };
     });
 
-    await actor.addAttributeTest(
-        stat,
-        name,
-        accessor,
-        rollData.difficultyGroup,
-        isSuccessful
-    );
+    if (rollData.recording) {
+        await actor.addAttributeTest(
+            stat,
+            name,
+            accessor,
+            rollData.difficultyGroup,
+            isSuccessful
+        );
+    }
     if (rollData.addHelp) {
         game.burningwheel.modifiers.grantTests(
             rollData.difficultyTestTotal,

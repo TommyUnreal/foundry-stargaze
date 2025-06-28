@@ -10,7 +10,7 @@ ENV FOUNDRY_DATA=/home/foundry/fvttdata
 
 WORKDIR "${FOUNDRY_DATA}"
 # system
-COPY ./dist ./Data/systems/burningwheel
+COPY ./dist ./Data/systems/stargaze
 # seeded data
 COPY ./test-world ./Data/worlds/test-world
 # secrets needed to avoid asking for license

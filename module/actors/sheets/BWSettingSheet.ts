@@ -6,7 +6,7 @@ import { TypeMissing } from '../../../types/index.js';
 
 export class BWSettingSheet extends ActorSheet<BWSettingSheetData> {
     get template(): string {
-        return 'systems/burningwheel/templates/setting-sheet.hbs';
+        return 'systems/stargaze/templates/setting-sheet.hbs';
     }
     get actor(): BWSetting {
         return super.actor as BWSetting;

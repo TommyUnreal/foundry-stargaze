@@ -7,6 +7,6 @@ export class BeliefSheet extends BWItemSheet {
     }
 
     get template(): string {
-        return 'systems/burningwheel/templates/items/belief.hbs';
+        return 'systems/stargaze/templates/items/belief.hbs';
     }
 }

@@ -22,7 +22,7 @@ export class LifepathSheet extends BWItemSheet<BWItemSheetData, Lifepath> {
     }
 
     get template(): string {
-        return 'systems/burningwheel/templates/items/lifepath.hbs';
+        return 'systems/stargaze/templates/items/lifepath.hbs';
     }
 
     activateListeners(html: JQuery): void {

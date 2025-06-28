@@ -293,6 +293,7 @@ async function learningRollCallback(
     };
 
     return advanceLearning(
+        rollData.recording,
         skill,
         statName,
         actor,
@@ -304,6 +305,7 @@ async function learningRollCallback(
 }
 
 async function advanceLearning(
+    recording: boolean,
     skill: Skill,
     statName: string,
     owner: BWCharacter,
@@ -312,6 +314,9 @@ async function advanceLearning(
     fr: RerollData | undefined,
     cb: (fr?: RerollData) => Promise<ChatMessage | null>
 ) {
+    if (!recording) {
+        return cb(fr);
+    }
     switch (difficultyGroup) {
         default:
             return advanceBaseStat(

@@ -76,6 +76,9 @@ export function getKeypressModifierPreset(
     e: JQuery.Event
 ): Partial<RollDialogData> {
     const dataPreset: Partial<RollDialogData> = {};
+
+    dataPreset.recording = false;
+
     if (e.shiftKey) {
         dataPreset.showObstacles = true;
         dataPreset.showDifficulty = true;
@@ -399,6 +402,9 @@ export function extractRollData(html: JQuery): RollData {
     const circlesBonus = extractSourcedValue(html, 'circlesBonus');
     const circlesMalus = extractSourcedValue(html, 'circlesMalus');
 
+    // If value is non-zero, it is set to true
+    const recording = !!extractCheckboxValue(html, 'recording');
+
     let penaltySources: { [i: string]: string } = obPenalty
         ? { [game.i18n.localize('BW.roll.woundPenalty')]: `+${obPenalty}` }
         : {};
@@ -523,6 +529,7 @@ export function extractRollData(html: JQuery): RollData {
         addHelp,
         persona,
         deeds,
+        recording,
     };
 }
 
@@ -680,17 +687,19 @@ export interface RollData {
     persona: number;
     /** Deeds dice granted */
     deeds: number;
+    /** Whether the roll is being recorded for a skill test */
+    recording: boolean;
 }
 
 /* ============ Constants =============== */
 export const templates = {
-    armorDialog: 'systems/burningwheel/templates/dialogs/armor-dialog.hbs',
-    armorMessage: 'systems/burningwheel/templates/chat/roll-message.hbs',
-    rerollChatMessage: 'systems/burningwheel/templates/chat/reroll-message.hbs',
-    pcRollDialog: 'systems/burningwheel/templates/dialogs/roll-dialog.hbs',
-    pcRollMessage: 'systems/burningwheel/templates/chat/roll-message.hbs',
-    npcRollDialog: 'systems/burningwheel/templates/dialogs/roll-dialog.hbs',
-    npcMessage: 'systems/burningwheel/templates/chat/roll-message.hbs',
+    armorDialog: 'systems/stargaze/templates/dialogs/armor-dialog.hbs',
+    armorMessage: 'systems/stargaze/templates/chat/roll-message.hbs',
+    rerollChatMessage: 'systems/stargaze/templates/chat/reroll-message.hbs',
+    pcRollDialog: 'systems/stargaze/templates/dialogs/roll-dialog.hbs',
+    pcRollMessage: 'systems/stargaze/templates/chat/roll-message.hbs',
+    npcRollDialog: 'systems/stargaze/templates/dialogs/roll-dialog.hbs',
+    npcMessage: 'systems/stargaze/templates/chat/roll-message.hbs',
 };
 
 /* =============== Types ================= */
@@ -719,6 +728,8 @@ export interface RollDialogData {
 
     deedsPoint?: boolean;
     personaOptions?: Record<number, number>;
+
+    recording?: boolean;
 }
 
 export interface RollChatMessageData {
@@ -739,6 +750,8 @@ export interface RollChatMessageData {
     fateReroll?: RerollData;
     callons: RerollData[];
     extraInfo?: string | HTMLElement;
+
+    recording?: boolean;
 }
 
 export interface RerollData {

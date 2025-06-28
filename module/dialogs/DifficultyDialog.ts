@@ -25,8 +25,7 @@ export class DifficultyDialog extends Application {
         }
     ) {
         super({
-            template:
-                'systems/burningwheel/templates/dialogs/gm-difficulty.hbs',
+            template: 'systems/stargaze/templates/dialogs/gm-difficulty.hbs',
             classes: ['gm-difficulty'],
             popOut: false,
         });

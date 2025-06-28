@@ -1,7 +1,7 @@
 {
   "title": "Test World",
   "id": "test-world",
-  "system": "burningwheel",
+  "system": "stargaze",
   "joinTheme": "default",
   "description": "<p>A world to test foundry stuff!</p>",
   "coreVersion": "12.331",

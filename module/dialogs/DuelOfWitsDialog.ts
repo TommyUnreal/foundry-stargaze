@@ -27,7 +27,7 @@ export class DuelOfWitsDialog extends ExtendedTestDialog<DuelOfWitsData> {
     }
 
     get template(): string {
-        return 'systems/burningwheel/templates/dialogs/duel-of-wits.hbs';
+        return 'systems/stargaze/templates/dialogs/duel-of-wits.hbs';
     }
 
     static get defaultOptions(): Dialog.Options {
