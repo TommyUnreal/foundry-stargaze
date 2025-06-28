@@ -294,6 +294,7 @@ async function learningRollCallback(
 
     return advanceLearning(
         rollData.recording,
+        rollData.recording,
         skill,
         statName,
         actor,
@@ -305,6 +306,7 @@ async function learningRollCallback(
 }
 
 async function advanceLearning(
+    recording: boolean,
     recording: boolean,
     skill: Skill,
     statName: string,

@@ -128,6 +128,7 @@ async function statRollCallback(
         deeds,
         addHelp,
         recording,
+        recording,
         difficultyTestTotal,
     } = extractRollData(dialogHtml);
 
