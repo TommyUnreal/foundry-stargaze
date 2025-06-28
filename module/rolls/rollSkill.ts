@@ -130,7 +130,6 @@ async function skillRollCallback(
         deeds,
         addHelp,
         recording,
-        recording,
         difficultyTestTotal,
     } = extractRollData(dialogHtml);
 
@@ -211,7 +210,6 @@ async function skillRollCallback(
                 success
             );
         }
-    }
 
     actor.updateArthaForSkill(skill.id, persona, deeds);
 
