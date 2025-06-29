@@ -10,8 +10,8 @@
         "BW.character.injuryAndRecovery" }}</label>
 </h2>
 {{#if system.collapsePtgs}}{{else}}
-<div class="ptgs">
-    {{> "systems/stargaze/templates/parts/ptgs.hbs" ptgs=system.ptgs id=actor.id
+<div>
+    {{> "systems/stargaze/templates/parts/injury.hbs" injury=system.injury id=actor.id
     }}
 </div>
 {{/if}}

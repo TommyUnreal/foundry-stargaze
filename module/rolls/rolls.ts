@@ -69,6 +69,8 @@ export async function handleRollable(
             return handleArmorRollEvent({ target, sheet });
         case 'spellTax':
             return handleSpellTaxRoll(target, sheet, dataPreset);
+        case 'breathingRoll':
+            return handleBreathingRollEvent({ sheet });
     }
 }
 
@@ -818,4 +820,41 @@ export interface RollOptions {
     extraInfo?: string;
     dataPreset?: Partial<RollDialogData>;
     onRollCallback?: () => Promise<unknown>;
+}
+
+/**
+ * Handles the breathing roll event from character sheet.
+ *
+ * This function performs a 1d6 roll to determine the outcome of a breathing check,
+ * used to assess injury during fight. Outputs message to the chat based on the roll result.
+ *
+ * @param sheet - The character sheet instance associated with the actor performing the roll.
+ * @returns A promise that resolves to the created ChatMessage.
+ */
+export async function handleBreathingRollEvent({
+    sheet,
+}: {
+    sheet: BWCharacterSheet;
+}): Promise<unknown> {
+    const actor = sheet.actor;
+    const roll = await new Roll('1d6').roll({ async: true });
+    const result = roll.dice[0].results[0].result;
+
+    let message = '';
+    let resultMessage = '';
+
+    if (result === 1) {
+        message = game.i18n.localize('BW.stargaze.injury.breathingRollFail');
+        resultMessage = `<div class="roll-die" data-success="false">${result}</div>`;
+    } else {
+        message = game.i18n.localize('BW.stargaze.injury.breathingRollSuccess');
+        resultMessage = `<div class="roll-die" data-success="true">${result}</div>`;
+    }
+
+    return ChatMessage.create({
+        content: `<b>${game.i18n.localize(
+            'BW.stargaze.injury.breathingRollTitle'
+        )}</b><br />${message}<br />Your roll: ${resultMessage}`,
+        speaker: ChatMessage.getSpeaker({ actor }),
+    });
 }

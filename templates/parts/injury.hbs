@@ -1,0 +1,101 @@
+<div class="injury-section">
+  <div class="injury-row injury-health-effects">
+    <!-- HP -->
+    <div class="injury-cell">
+      <span class="injury-headline injury-hp-headline">{{localize "BW.stargaze.injury.hp"}}</span>
+      <label for="injury-hp" class="injury-label" style="display:none;">{{localize "BW.stargaze.injury.hp"}}</label>
+      <input type="number" class="injury-hp injury-hp-input" id="injury-hp" name="system.injury.hitPoints" value="{{injury.hitPoints}}" min="0" max="{{injury.hitPointsMax}}">
+      <span class="injury-max">/ {{injury.hitPointsMax}}</span>
+    </div>
+    <!-- Bleeding -->
+    <div class="injury-cell{{#if injury.bleeding}} injury-cell-active{{/if}}">
+      <span class="injury-headline{{#if injury.bleeding}} injury-headline-active{{/if}}">{{localize "BW.stargaze.injury.bleeding"}}</span>
+      {{#if injury.bleeding}}
+        <span>{{localize "BW.stargaze.injury.bleedingEffect"}}</span><br />
+        <button type="button" class="rollable modifiable"
+          data-rollable-name="BW.forte"
+          data-accessor="system.forte"
+          data-difficulty="3"
+          data-roll-type="stat"
+          aria-label="{{localize 'BW.stargaze.injury.bleedingRollAria'}}"
+          title="{{localize 'BW.stargaze.injury.bleedingRollTitle'}}"
+        >
+          <i class="fas fa-dice"></i>
+        </button>
+      {{else}}
+        <span>{{localize "BW.stargaze.injury.noEffect"}}</span>
+      {{/if}}
+    </div>
+    <!-- Pain -->
+    <div class="injury-cell{{#if injury.pain}} injury-cell-active{{/if}}">
+      <span class="injury-headline{{#if injury.pain}} injury-headline-active{{/if}}">{{localize "BW.stargaze.injury.pain"}}</span>
+      {{#if injury.pain}}
+        <span>{{localize "BW.stargaze.injury.painEffect"}}</span>
+      {{else}}
+        <span>{{localize "BW.stargaze.injury.noEffect"}}</span>
+      {{/if}}
+    </div>
+    <!-- Mobility -->
+    <div class="injury-cell{{#if injury.mobility}} injury-cell-active{{/if}}">
+      <span class="injury-headline{{#if injury.mobility}} injury-headline-active{{/if}}">{{localize "BW.stargaze.injury.mobility"}}</span>
+      {{#if injury.mobility}}
+        <span>{{localize "BW.stargaze.injury.mobilityEffect"}}</span>
+      {{else}}
+        <span>{{localize "BW.stargaze.injury.noEffect"}}</span>
+      {{/if}}
+    </div>
+    <!-- Breathing -->
+    <div class="injury-cell{{#if injury.breathing}} injury-cell-active{{/if}}">
+      <span class="injury-headline{{#if injury.breathing}} injury-headline-active{{/if}}">{{localize "BW.stargaze.injury.breathing"}}</span>
+      {{#if injury.breathing}}
+        <span>{{localize "BW.stargaze.injury.breathingEffect"}}</span><br />
+        <button type="button" class="rollable modifiable"
+          data-roll-type="breathingRoll"
+          aria-label="{{localize 'BW.stargaze.injury.breathingRollAria'}}"
+          title="{{localize 'BW.stargaze.injury.breathingRollTitle'}}"
+        >
+          <i class="fas fa-dice"></i>
+        </button>
+      {{else}}
+        <span>{{localize "BW.stargaze.injury.noEffect"}}</span>
+      {{/if}}
+    </div>
+    <!-- Numbness -->
+    <div class="injury-cell{{#if injury.numbness}} injury-cell-active{{/if}}">
+      <span class="injury-headline{{#if injury.numbness}} injury-headline-active{{/if}}">{{localize "BW.stargaze.injury.numbness"}}</span>
+      {{#if injury.numbness}}
+        <span>{{localize "BW.stargaze.injury.numbnessEffect"}}</span>
+      {{else}}
+        <span>{{localize "BW.stargaze.injury.noEffect"}}</span>
+      {{/if}}
+    </div>
+    <!-- Incapacitated -->
+    <div class="injury-cell{{#if injury.incapacitated}} injury-cell-active{{/if}}">
+      <span class="injury-headline{{#if injury.incapacitated}} injury-headline-active{{/if}}">{{localize "BW.stargaze.injury.incapacitated"}}</span>
+      {{#if injury.incapacitated}}
+        <span>{{localize "BW.stargaze.injury.incapacitatedEffect"}}</span>
+      {{else}}
+        <span>{{localize "BW.stargaze.injury.noEffect"}}</span>
+      {{/if}}
+    </div>
+  </div>
+  <div class="injury-row injury-meta">
+    <!-- Tough trait -->
+    <div class="injury-meta-cell">
+      <label class="injury-tough">
+        <input type="checkbox" name="system.injury.tough" {{checked injury.tough}}>
+        {{localize "BW.stargaze.injury.tough"}}
+      </label>
+    </div>
+    <!-- Next Regeneration -->
+    <div class="injury-meta-cell">
+      <label for="injury-next-regeneration" class="injury-label">{{localize "BW.stargaze.injury.nextRegeneration"}}</label>
+      <input type="date" class="injury-date" id="injury-next-regeneration" name="system.injury.nextRegeneration" value="{{#if injury.nextRegeneration}}{{injury.nextRegeneration}}{{else}}3162-01-01{{/if}}">
+    </div>
+    <!-- Next Surgery -->
+    <div class="injury-meta-cell">
+      <label for="injury-next-surgery" class="injury-label">{{localize "BW.stargaze.injury.nextSurgery"}}</label>
+      <input type="date" class="injury-date" id="injury-next-surgery" name="system.injury.nextSurgery" value="{{#if injury.nextSurgery}}{{injury.nextSurgery}}{{else}}3162-01-01{{/if}}">
+    </div>
+  </div>
+</div>

@@ -11,6 +11,7 @@ export async function preloadHandlebarsTemplates(): Promise<unknown[]> {
         'systems/stargaze/templates/parts/spell.hbs',
         'systems/stargaze/templates/parts/trait.hbs',
         'systems/stargaze/templates/parts/weapons.hbs',
+        'systems/stargaze/templates/parts/injury.hbs',
 
         'systems/stargaze/templates/sections/attributes.hbs',
         'systems/stargaze/templates/sections/beliefs.hbs',

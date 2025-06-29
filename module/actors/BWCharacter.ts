@@ -22,7 +22,8 @@ export class BWCharacter extends BWActor<BWCharacterData> {
     prepareData(): void {
         super.prepareData();
 
-        this._calculatePtgs();
+        //this._calculatePtgs(); // Removed from Stargaze
+        this._calculateInjury();
 
         const woundDice = this.system.ptgs.woundDice || 0;
         updateTestsNeeded(
@@ -137,6 +138,7 @@ export class BWCharacter extends BWActor<BWCharacterData> {
         return this.update(updateData);
     }
 
+    /* removed from Stargaze
     private _calculatePtgs() {
         let suCount = 0;
         let woundDice = 0;
@@ -188,6 +190,7 @@ export class BWCharacter extends BWActor<BWCharacterData> {
 
         this.system.ptgs.woundDice = woundDice;
     }
+    */
 
     private static _calculateThresholds(
         mo: number,
@@ -208,6 +211,72 @@ export class BWCharacter extends BWActor<BWCharacterData> {
         const li = Math.min(mi - 1, su + maxGap);
 
         return { su, li, mi, se, tr, mo };
+    }
+
+    /**
+     * Calculates and sets the character's injury maximums and current HP,
+     * then updates injury injury flags based on current HP and traits.
+     * Also sets the injury die penalty (injury.penaltyDice) based on injury state:
+     * - Numbness: 2 injury dice
+     * - Pain: 1 injury die
+     * - Otherwise: 0 injury dice
+     */
+    private _calculateInjury() {
+        const injury = this.system.injury;
+
+        injury.hitPointsMax = injury.tough ? 13 : 12;
+        injury.hitPoints = Math.min(injury.hitPoints, injury.hitPointsMax);
+
+        if (injury.numbness) {
+            injury.penaltyDice = 2;
+        } else if (injury.pain) {
+            injury.penaltyDice = 1;
+        } else {
+            injury.penaltyDice = 0;
+        }
+
+        this._setInjuryWounds();
+    }
+
+    /**
+     * Resets all injury wound flags (bleeding, pain, mobility, etc.) to false.
+     * Used before recalculating wound effects.
+     */
+    private _resetInjuryWounds() {
+        const injury = this.system.injury;
+
+        injury.bleeding = false;
+        injury.pain = false;
+        injury.mobility = false;
+        injury.breathing = false;
+        injury.numbness = false;
+        injury.incapacitated = false;
+    }
+
+    /**
+     * Sets injury wound flags (bleeding, pain, mobility, etc.) based on the
+     * current hit points and the "Tough" trait, following the revised injury rules.
+     *
+     * Thresholds for each effect (inclusive):
+     * - Bleeding: at 6 HP (7 if tough)
+     * - Pain: at 5 HP (6 if tough)
+     * - Mobility: at 4 HP (5 if tough)
+     * - Breathing: at 3 HP (4 if tough)
+     * - Numbness: at 2 HP (3 if tough)
+     * - Incapacitated: at 0 HP (0 if tough)
+     */
+    private _setInjuryWounds() {
+        this._resetInjuryWounds();
+        const injury = this.system.injury;
+        const hp = injury.hitPoints ?? 0;
+        const maxHp = injury.hitPointsMax ?? (injury.tough ? 13 : 12);
+
+        if (hp <= maxHp - 6) injury.bleeding = true;
+        if (hp <= maxHp - 7) injury.pain = true;
+        if (hp <= maxHp - 8) injury.mobility = true;
+        if (hp <= maxHp - 9) injury.breathing = true;
+        if (hp <= maxHp - 10) injury.numbness = true;
+        if (hp <= 0) injury.incapacitated = true;
     }
 
     async addStatTest(
@@ -480,6 +549,7 @@ export interface BWCharacterData
     extends Common,
         DisplayProps,
         Ptgs,
+        Injury,
         SpellsMaintainedInfo {
     stock: string;
     age: number;
@@ -561,4 +631,21 @@ export interface Ptgs {
 interface Wound {
     amount: string[]; // quirk relating to how radio button data is stored
     threshold: string;
+}
+
+export interface Injury {
+    injury: {
+        hitPoints: number;
+        hitPointsMax: number;
+        bleeding: boolean;
+        pain: boolean;
+        mobility: boolean;
+        breathing: boolean;
+        numbness: boolean;
+        tough: boolean;
+        incapacitated: boolean;
+        penaltyDice: number;
+        nextRegeneration: string; // date
+        nextSurgery: string; // date
+    };
 }
