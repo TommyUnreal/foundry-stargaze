@@ -204,9 +204,12 @@ async function skillRollCallback(
         }
     }
 
-    if (addHelp) {
-        game.burningwheel.modifiers.grantTests(difficultyTestTotal, success);
-    }
+        if (addHelp) {
+            game.burningwheel.modifiers.grantTests(
+                difficultyTestTotal,
+                success
+            );
+        }
 
     actor.updateArthaForSkill(skill.id, persona, deeds);
 
