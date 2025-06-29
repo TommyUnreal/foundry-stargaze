@@ -9,6 +9,7 @@ This file contains the changelog for the Stargaze Foundry VTT System, based on B
         - Included in the Character Sheet.
         - Custom dice rolls for Bleeding and Breathing.
         - Remove call of `_calculatePtgs()`.
+        - ToDo: Automated injury penalties (Exponent penalty & AP recovery).
 
 ## 0.1.0
 
