@@ -2,7 +2,7 @@
     {{#if system.settings.showSettings}}
     {{> "systems/burningwheel/templates/sections/character-settings.hbs"}}
     {{/if}}
-    
+
     {{> "systems/burningwheel/templates/sections/header.hbs"}}
 {{#if isObserver}}
     {{!-- Character Tabs --}}
@@ -29,7 +29,7 @@
         <div class="tab" data-tab="social-and-notes" data-group="sheet-tabs">
             {{!-- Relationships Section --}}
             {{> "systems/burningwheel/templates/sections/social.hbs"}}
-        
+
             {{!-- Misc Section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
 {{> "systems/burningwheel/templates/sections/misc.hbs"}}
         </div>
@@ -56,7 +56,7 @@
         <div class="tab" data-tab="gear-and-combat" data-group="sheet-tabs" >
             {{!-- Gear section --}}
             {{> "systems/burningwheel/templates/sections/gear.hbs"}}
-            
+
             {{!-- PTGS section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
 {{> "systems/burningwheel/templates/sections/ptgs.hbs"}}
 

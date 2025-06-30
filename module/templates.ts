@@ -11,6 +11,7 @@ export async function preloadHandlebarsTemplates(): Promise<unknown[]> {
         'systems/burningwheel/templates/parts/spell.hbs',
         'systems/burningwheel/templates/parts/trait.hbs',
         'systems/burningwheel/templates/parts/weapons.hbs',
+        'systems/burningwheel/templates/parts/injury.hbs',
 
         'systems/burningwheel/templates/sections/attributes.hbs',
         'systems/burningwheel/templates/sections/beliefs.hbs',

@@ -32,6 +32,19 @@ Actor:
         woundRecovery3: 0
         shrugging: false
         gritting: false
+    injury:
+      hitPoints: 12
+      hitPointsMax: 12
+      bleeding: false
+      pain: false
+      mobility: false
+      breathing: false
+      numbness: false
+      tough: false
+      incapacitated: false
+      penaltyDice: 0
+      nextRegeneration: '3162-01-01'
+      nextSurgery: '3162-01-01'
     displayProps:
       collapseBeliefs: false
       collapseInstincts: false
@@ -112,6 +125,7 @@ Actor:
       - common
       - displayProps
       - ptgs
+      - injury
       - settings
       - spellsSustained
     stock: ''
@@ -133,6 +147,12 @@ Actor:
     hesitation: 5
     reflexes: 1
     reflexesShade: 'B'
+    injury:
+      hitPoints: 12
+      hitPointsMax: 12
+      incapacitated: false
+      nextRegeneration: '3162-01-01'
+      nextSurgery: '3162-01-01'
     ptgs:
       suThresh: 3
       suTaken: 0
@@ -224,6 +244,7 @@ Item:
     root2: ''
     learning: false
     learningProgress: 0
+    recording: false
     skilltype: 'academic'
     training: false
     magical: false

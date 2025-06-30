@@ -10,7 +10,8 @@ node_modules/
 dist
 
 # user config file
-foundryconfig.json
+foundryConfig.json
+how_to_build.txt
 
 # default deploy destination
 release/

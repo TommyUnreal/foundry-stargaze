@@ -281,6 +281,7 @@ async function learningRollCallback(
             fateReroll: fr,
             callons,
             extraInfo,
+            recording: rollData.recording,
         };
         const messageHtml = await renderTemplate(templates.pcRollMessage, data);
         if (onRollCallback) {
@@ -293,6 +294,7 @@ async function learningRollCallback(
     };
 
     return advanceLearning(
+        rollData.recording,
         skill,
         statName,
         actor,
@@ -304,6 +306,7 @@ async function learningRollCallback(
 }
 
 async function advanceLearning(
+    recording: boolean,
     skill: Skill,
     statName: string,
     owner: BWCharacter,
@@ -312,6 +315,9 @@ async function advanceLearning(
     fr: RerollData | undefined,
     cb: (fr?: RerollData) => Promise<ChatMessage | null>
 ) {
+    return advanceLearningProgress(skill, fr, recording, cb);
+
+    /*
     switch (difficultyGroup) {
         default:
             return advanceBaseStat(
@@ -324,7 +330,7 @@ async function advanceLearning(
                 cb
             );
         case 'Routine':
-            return advanceLearningProgress(skill, fr, cb);
+            return advanceLearningProgress(skill, fr, recording, cb);
         case 'Routine/Difficult':
             // we can either apply this to the base stat or to the learning
             const dialog = new Dialog({
@@ -340,7 +346,7 @@ async function advanceLearning(
                             'BW.roll.learningApplyRoutine'
                         ),
                         callback: async () =>
-                            advanceLearningProgress(skill, fr, cb),
+                            advanceLearningProgress(skill, fr, recording, cb),
                     },
                     stat: {
                         label: game.i18n.localize(
@@ -362,8 +368,10 @@ async function advanceLearning(
             });
             return dialog.render(true);
     }
+    */
 }
 
+/*
 async function advanceBaseStat(
     _skill: Skill,
     owner: BWCharacter,
@@ -396,13 +404,17 @@ async function advanceBaseStat(
 
     return cb(fr);
 }
+*/
 
 async function advanceLearningProgress(
     skill: Skill,
     fr: RerollData | undefined,
+    recording: boolean,
     cb: (fr?: RerollData) => Promise<ChatMessage | null>
 ) {
-    skill.addTest('Routine');
+    if (recording) {
+        skill.addTest('Routine');
+    }
     return cb(fr);
 }
 

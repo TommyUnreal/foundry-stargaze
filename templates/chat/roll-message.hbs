@@ -3,7 +3,7 @@
         {{name}}
     </div>
     <div class="roll-full-width roll-{{difficultyGroup}}">
-        {{localize difficultyGroup}}
+        {{localize difficultyGroup}}{{#if recording}} (Recorded){{/if}}
     </div>
     <div class="roll-half-width" aria-label="dice">
         {{#each dieSources as |source|}}
@@ -19,7 +19,7 @@
         {{#if obPenalty}}
         <div class="left-align">
             +{{obPenalty}} {{localize "BW.chat.woundPenalty"}}
-        </div>    
+        </div>
         {{/if}}
         {{#if penaltySources}}
         {{#each penaltySources as |s|}}

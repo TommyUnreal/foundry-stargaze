@@ -129,6 +129,7 @@ async function skillRollCallback(
         persona,
         deeds,
         addHelp,
+        recording,
         difficultyTestTotal,
     } = extractRollData(dialogHtml);
 
@@ -194,11 +195,13 @@ async function skillRollCallback(
         };
     });
     const success = parseInt(roll.result) + wildForkBonus >= difficultyTotal;
-    if (
-        success ||
-        actor.successOnlyRolls.indexOf(skill.name.toLowerCase()) === -1
-    ) {
-        await skill.addTest(dg);
+    if (recording) {
+        if (
+            success ||
+            actor.successOnlyRolls.indexOf(skill.name.toLowerCase()) === -1
+        ) {
+            await skill.addTest(dg);
+        }
     }
 
     if (addHelp) {
@@ -223,6 +226,7 @@ async function skillRollCallback(
         fateReroll,
         callons,
         extraInfo,
+        recording,
     };
 
     const messageHtml = await renderTemplate(templates.pcRollMessage, data);

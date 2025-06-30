@@ -138,13 +138,15 @@ async function attrRollCallback(
         };
     });
 
-    await actor.addAttributeTest(
-        stat,
-        name,
-        accessor,
-        rollData.difficultyGroup,
-        isSuccessful
-    );
+    if (rollData.recording) {
+        await actor.addAttributeTest(
+            stat,
+            name,
+            accessor,
+            rollData.difficultyGroup,
+            isSuccessful
+        );
+    }
     if (rollData.addHelp) {
         game.burningwheel.modifiers.grantTests(
             rollData.difficultyTestTotal,
@@ -167,6 +169,7 @@ async function attrRollCallback(
         dieSources: { ...rollData.dieSources },
         fateReroll,
         callons,
+        recording: rollData.recording,
     };
     const messageHtml = await renderTemplate(templates.pcRollMessage, data);
     return ChatMessage.create({

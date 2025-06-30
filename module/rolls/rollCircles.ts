@@ -174,6 +174,7 @@ async function circlesRollCallback(
         penaltySources: rollData.obSources,
         fateReroll,
         callons,
+        recording: rollData.recording,
     };
     const messageHtml = await renderTemplate(templates.pcRollMessage, data);
 

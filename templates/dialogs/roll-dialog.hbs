@@ -1,5 +1,23 @@
 <form class='dialog'>
     <h2>{{name}}</h2>
+    <div class='flex-row' aria-label="record roll">
+        <hr class='dialog-section-before' />
+        <div class='dialog-section-text'>
+            {{localize 'BW.stargaze.rollDialog.sectionText'}}
+        </div>
+        <hr
+            class='dialog-section-after' />
+        <div class='flex-row dialog-row'>
+            <input
+                aria-label="record roll"
+                id='checkbox-record-roll'
+                type='checkbox'
+                name='recording'
+                value="1" />
+            <label for='checkbox-record-roll'>{{localize
+                'BW.stargaze.rollDialog.checkBoxLabel'}}</label>
+        </div>
+    </div>
     {{#if showObstacles}}
         <div class='flex-row' aria-label="obstacle penalties">
             <hr class='dialog-section-before' /><div

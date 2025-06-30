@@ -6,7 +6,7 @@
     <label for="{{actor.id}}-collapsePtgs" class="section-collapse-label clickable">{{localize "BW.character.injuryAndRecovery" }}</label>
 </h2>
 {{#if system.collapsePtgs}}{{else}}
-<div class="ptgs">
-    {{> "systems/burningwheel/templates/parts/ptgs.hbs" ptgs=system.ptgs id=actor.id }}
+<div>
+    {{> "systems/burningwheel/templates/parts/injury.hbs" injury=system.injury id=actor.id }}
 </div>
 {{/if}}

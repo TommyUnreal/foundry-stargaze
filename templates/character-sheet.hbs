@@ -5,8 +5,32 @@
 
     {{!-- Character header --}}
     {{> "systems/burningwheel/templates/sections/header.hbs"}}
+    {{#if isObserver}}
 
-{{#if isObserver}}
+    {{!-- Stats Section --}}
+    {{> "systems/burningwheel/templates/sections/stats.hbs"}}
+
+    {{!-- Attributes Section --}}
+    {{> "systems/burningwheel/templates/sections/attributes.hbs"}}
+
+    {{!-- PTGS section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
+{{> "systems/burningwheel/templates/sections/ptgs.hbs"}}
+
+    {{!-- Skills Section --}}
+    {{> "systems/burningwheel/templates/sections/skills.hbs"}}
+
+    {{!-- Learning Section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
+{{> "systems/burningwheel/templates/sections/learning.hbs"}}
+
+    {{!-- Gear section --}}
+    {{> "systems/burningwheel/templates/sections/gear.hbs"}}
+
+    {{!-- Weapons and Armor Section --}}
+    {{> "systems/burningwheel/templates/sections/weapons-and-armor.hbs"}}
+
+    {{!-- Spells Section --}}
+    {{> "systems/burningwheel/templates/sections/spells.hbs"}}
+
     {{!-- Beliefs Sheet Section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
 {{> "systems/burningwheel/templates/sections/beliefs.hbs"}}
 
@@ -16,35 +40,12 @@
     {{!-- Traits Sheet Section --}}
     {{> "systems/burningwheel/templates/sections/traits.hbs"}}
 
-    {{!-- Stats Section --}}
-    {{> "systems/burningwheel/templates/sections/stats.hbs"}}
-
-    {{!-- Attributes Section --}}
-    {{> "systems/burningwheel/templates/sections/attributes.hbs"}}
-
     {{!-- Relationships, Reputations and Affiliations Section --}}
     {{> "systems/burningwheel/templates/sections/social.hbs"}}
-
-    {{!-- Gear section --}}
-    {{> "systems/burningwheel/templates/sections/gear.hbs"}}
-
-    {{!-- Spells Section --}}
-    {{> "systems/burningwheel/templates/sections/spells.hbs"}}
 
     {{!-- Misc Section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
 {{> "systems/burningwheel/templates/sections/misc.hbs"}}
 
-    {{!-- Skills Section --}}
-    {{> "systems/burningwheel/templates/sections/skills.hbs"}}
-
-    {{!-- Learning Section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
-{{> "systems/burningwheel/templates/sections/learning.hbs"}}
-
-    {{!-- PTGS section - funny indentation to avoid problems with textareas inserting extra whitespace. --}}
-{{> "systems/burningwheel/templates/sections/ptgs.hbs"}}
-
-    {{!-- Weapons and Armor Section --}}
-    {{> "systems/burningwheel/templates/sections/weapons-and-armor.hbs"}}
 {{/if}}
     <hr>
     {{> "systems/burningwheel/templates/sections/footer.hbs" }}
