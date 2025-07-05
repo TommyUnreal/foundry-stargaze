@@ -1,0 +1,144 @@
+.weapon-form {
+    // Header styling
+    .weapon-header {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        margin-bottom: 1em;
+
+        .weapon-image {
+            flex: 0 0 64px;
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            border: 1px solid #999;
+        }
+
+        .weapon-name-input {
+            flex: 1;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 0.25em;
+        }
+    }
+
+    // Section container styling
+    .flex-row {
+        padding: 3px 5px 0 5px;
+        border: 2px outset #b4b4b4;
+        border-top: 0;
+        border-radius: 5px;
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
+
+    // Wrapper for all fields within a section
+    .section-content {
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    // A single line of controls
+    .dialog-row {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        margin-bottom: 0px;
+    }
+
+    // A single label/input pair
+    .form-group {
+        // This is the crucial part: a flex container for the label and input.
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        flex: 1; // By default, each group will share space equally in a row.
+
+        // The new span-based label
+        .label {
+            // This prevents the label from wrapping or being squished.
+            flex: 0 0 auto;
+            white-space: nowrap;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        // The input/select itself should take the remaining space within the group.
+        & > input,
+        & > select,
+        & > .input-group {
+            flex: 1 1 auto;
+        }
+    }
+
+    // General input styling for a flatter, transparent look
+    input,
+    select,
+    textarea {
+        background: transparent !important;
+        border: none;
+        border-bottom: 1px solid #b4b4b4;
+        border-radius: 0;
+        padding: 4px;
+        height: 28px;
+        box-sizing: border-box;
+        width: 100%; // Inputs fill their parent flex item.
+
+        &:focus {
+            outline: none;
+            border-bottom-color: #0066cc;
+        }
+
+        // Sizing utility classes
+        .short-input,
+        .medium-input {
+            flex: 0 1 auto; // Allow specific sizing instead of growing.
+        }
+        .short-input {
+            width: 60px;
+        }
+        .medium-input {
+            width: 120px;
+        }
+    }
+
+    textarea {
+        min-height: 60px;
+        height: auto;
+        resize: vertical;
+    }
+
+    // For groups of inputs under one label
+    .input-group {
+        display: flex;
+        align-items: center;
+        gap: 0.25em;
+        padding: 0;
+        height: 28px;
+        flex: 0 0 auto; // <-- Add this line to shrink to content
+        width: auto; // <-- Add this line to override any width: 100%
+
+        input {
+            border: none;
+            text-align: center;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 2px;
+        }
+
+        span {
+            line-height: 1;
+        }
+    }
+
+    .section-spacer {
+        width: 100%;
+        height: 10px;
+        display: block;
+        content: '';
+    }
+}

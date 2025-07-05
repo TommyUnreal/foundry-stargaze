@@ -311,10 +311,34 @@ Item:
     optimalRange: 1
     extremeRange: 3
     maxRange: 125 paces
+    shade: 'B'
     handedness: two
     description: ''
     skillId: ''
-    shade: 'B'
+    skill: 'Sidearms'
+    manufacturer: 'unique'
+    MSRP: 0
+    skillMitigation: 'Armor' # 'Barriers'
+    skillMitigationId: ''
+    skillAvoidance: 'Cover' # 'Dodge'
+    skillAvoidanceId: ''
+    skillRepair: 'Munitions' # 'Jurry Rigging'
+    skillRepairId: ''
+    rangeShort: 0
+    rangeMedium: 0
+    rangeLong: 0
+    weaponQuality: 0
+    ammoType: '10.LC'
+    shotsPerCharge: 1
+    chargePerAmmo: 1
+    AmmoPerReload: 0
+    chargeLevel: 0
+    chargeLevelMax: 0
+    integrity: 0
+    integrityMax: 0
+    APPerShot: 0
+    APPerReload: 0
+    reloadType: 'per shot' # 'magazine', 'battery'
   armor:
     templates:
       - pointCost

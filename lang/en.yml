@@ -1,23 +1,4 @@
 TYPES:
-  Actor:
-    Character: Player Character
-    Npc: Non-Player Character
-    Setting: Setting
-  Item:
-    Belief: Belief
-    Instinct: Instinct
-    Trait: Trait
-    Skill: Skill
-    Relationship: Relationship
-    Reputation: Reputation
-    Affiliation: Affiliation
-    Possession: Possession
-    Property: Property
-    Melee Weapon: Melee Weapon
-    Ranged Weapon: Ranged Weapon
-    Armor: Armor
-    Spell: Spell
-    Lifepath: Lifepath
 BW:
   fate: Fate
   fateAcronym: F
@@ -541,3 +522,42 @@ BW:
       tough: Tough Trait Learned.
       nextRegeneration: Next Regeneration Available at
       nextSurgery: Next Surgery Available at
+    weapon:
+      section:
+        basics: 'Basics Stats'
+        combat: 'Combat Stats'
+        ammo: 'Ammunition Stats'
+        desc: 'Description'
+      skill: 'Skill'
+      manufacturer: 'Manufacturer'
+      msrp: 'MSRP (Σ)'
+      handedness: ''
+      oneHanded: 'One-Handed'
+      twoHanded: 'Two-Handed'
+      quality: 'Quality'
+      range: 'Range'
+      ap: 'AP (shot/reload)'
+      rangeShort: 'Optimal'
+      rangeMedium: 'Extreme'
+      rangeLong: 'Max'
+      apPerShot: 'Shot'
+      apPerReload: 'Reload'
+      skillMitigation: 'Block w/'
+      skillAvoidance: 'Evade w/'
+      ammoType: 'Ammo Type'
+      shots: 'Shots'
+      shotsPerCharge: 'Charge➙Shots'
+      chargePerAmmo: 'Ammo➙Charges'
+      ammoPerReload: 'Reload➙Ammo'
+      reloadType: ''
+      perShot: 'Reload Per Shot'
+      magazine: 'Reload Magazine'
+      battery: 'Reload Battery'
+      integrity: 'Integrity'
+      skillRepair: 'Fix w/'
+      skillPlaceholder: 'e.g., Sidearms'
+      manufacturerPlaceholder: 'e.g., Ares'
+      repairSkillPlaceholder: 'e.g., Munitions'
+      mitigationSkillPlaceholder: 'e.g., Armor'
+      avoidanceSkillPlaceholder: 'e.g., Cover'
+      descriptionPlaceholder: 'Enter weapon traits, description, history, and quirks...'

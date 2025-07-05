@@ -1,208 +1,159 @@
-<form autocomplete='off' class='flex-column'>
+<form autocomplete='off' class='weapon-form dialog'>
+    <div class='weapon-header'>
+        <img class='weapon-image' src='{{item.img}}' title='{{item.name}}' data-edit='img' />
+        <input name='name' type='text' value='{{item.name}}' class='weapon-name-input' placeholder='Weapon Name' />
+    </div>
+
     <div class='flex-row'>
-        {{#if showImage}}
-            <img
-                class='item-image'
-                src='{{item.img}}'
-                title='{{item.name}}'
-                data-edit='img'
-            />
-        {{/if}}
-        <input
-            name='name'
-            type='text'
-            value='{{item.name}}'
-            class='item-sheet-name'
-        />
-    </div>
-    <div class='item-form-group'>
-        <div class='pill-toggle'>
-            <input
-                id='{{item.id}}-checkbox-usePower'
-                type='checkbox'
-                name='system.usePower'
-                {{checked system.usePower}}
-            />
-            <label for='{{item.id}}-checkbox-usePower'>{{localize
-                    'BW.weapon.usePower'
-                }}</label>
-        </div>
-        <div class='pill-toggle'>
-            <input
-                id='{{item.id}}-checkbox-hasGunpowder'
-                type='checkbox'
-                name='system.hasGunpowder'
-                {{checked system.hasGunpowder}}
-            />
-            <label for='{{item.id}}-checkbox-hasGunpowder'>{{localize
-                    'BW.weapon.useGunpowder'
-                }}</label>
-        </div>
-    </div>
-    <hr />
-    {{#if system.usePower}}
-        <div class='input-grid'>
-            <div>
-                <input
-                    id='{{item.id}}-number-power'
-                    type='number'
-                    name='system.powerBonus'
-                    value='{{system.powerBonus}}'
-                />
-                <label for='{{item.id}}-number-power'>{{localize
-                        'BW.weapon.powerBonus'
-                    }}</label>
+        <hr class='dialog-section-before' /><div class='dialog-section-text'>{{localize 'BW.stargaze.weapon.section.basics'}} </div><hr class='dialog-section-after' />
+        <div class='section-content'>
+            <div class='dialog-row'>
+                <div class='form-group'>
+                    <span class='label'>{{localize 'BW.stargaze.weapon.quality'}}</span>
+                    <input type='number' name='system.weaponQuality' value='{{system.weaponQuality}}' class='short-input' />
+                </div>
+                <div class='form-group'>
+                    <div class='input-group'>
+                        <span class='label'>{{localize 'BW.stargaze.weapon.msrp'}}</span>
+                        <input type='text' name='system.MSRP' value='{{system.MSRP}}' class='medium-input' />
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <span class='label'>{{localize 'BW.stargaze.weapon.handedness'}}</span>
+                    <select name='system.handedness' class='short-input'>
+                        <option value='one' {{#if (eq system.handedness 'one')}}selected{{/if}}>{{localize 'BW.stargaze.weapon.oneHanded'}}</option>
+                        <option value='two' {{#if (eq system.handedness 'two')}}selected{{/if}}>{{localize 'BW.stargaze.weapon.twoHanded'}}</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <hr />
-    {{/if}}
-    <div class='input-grid'>
-        <div>
-            <input
-                id='{{item.id}}-number-incidental'
-                type='number'
-                name='system.incidental'
-                value='{{system.incidental}}'
-                {{disabled system.usePower}}
-            />
-            <label for='{{item.id}}-number-incidental'>{{localize
-                    'BW.weapon.incidental'
-                }}:
-                {{system.incidentalLabel}}</label>
-        </div>
-        <div>
-            <input
-                id='{{item.id}}-number-mark'
-                type='number'
-                name='system.mark'
-                value='{{system.mark}}'
-                {{disabled system.usePower}}
-            />
-            <label for='{{item.id}}-number-mark'>{{localize 'BW.weapon.mark'}}:
-                {{system.markLabel}}</label>
-        </div>
-        <div>
-            <input
-                id='{{item.id}}-number-superb'
-                type='number'
-                name='system.superb'
-                value='{{system.superb}}'
-                {{disabled system.usePower}}
-            />
-            <label for='{{item.id}}-number-superb'>{{localize
-                    'BW.weapon.superb'
-                }}:
-                {{system.superbLabel}}</label>
-        </div>
-        <div>
-            <input
-                id='{{item.id}}-number-incidentalMax'
-                type='number'
-                name='system.incidentalRoll'
-                value='{{system.incidentalRoll}}'
-            />
-            <label
-                for='{{item.id}}-number-incidentalMax'
-                title='{{localize "BW.weapon.incidentalThresholdHelp"}}'
-            >{{localize 'BW.weapon.incidentalThreshold'}}</label>
-        </div>
-        <div>
-            <input
-                id='{{item.id}}-number-markMax'
-                type='number'
-                name='system.markRoll'
-                value='{{system.markRoll}}'
-            />
-            <label
-                for='{{item.id}}-number-markMax'
-                title='{{localize "BW.weapon.markThresholdHelp"}}'
-            >{{localize 'BW.weapon.markThreshold'}}</label>
-        </div>
-        <div>
-            <input
-                id='{{item.id}}-number-va'
-                type='number'
-                name='system.vsArmor'
-                value='{{system.vsArmor}}'
-            />
-            <label for='{{item.id}}-number-va'>{{localize
-                    'BW.weapon.vsArmor'
-                }}</label>
-        </div>
-        <div>
-            <select
-                id='{{item.id}}-select-quality'
-                name='system.quality'
-                value='{{system.quality}}'
-            >
-                {{selectOptions weaponQualities selected=system.quality localize=true}}
-            </select>
-            <label for='{{item.id}}-select-quality'>{{localize
-                    'BW.weapon.quality'
-                }}</label>
-        </div>
-        <div>
-            <select
-                id='{{item.id}}-select-shade'
-                name='system.shade'
-                value='{{system.shade}}'
-            >
-                {{selectOptions shades selected=system.shade localize=true}}
-            </select>
-            <label for='{{item.id}}-select-shade'>{{localize
-                    'BW.shade'
-                }}</label>
-        </div>
-        <div>
-            <input
-                id='{{item.id}}-optimal-range'
-                type='number'
-                data-dtype='Number'
-                name='system.optimalRange'
-                value='{{system.optimalRange}}'
-            />
-            <label for='{{item.id}}-optimal-range'>{{localize
-                    'BW.weapon.optimal'
-                }}</label>
-        </div>
-        <div>
-            <input
-                id='{{item.id}}-extreme-range'
-                type='number'
-                data-dtype='Number'
-                name='system.extremeRange'
-                value='{{system.extremeRange}}'
-            />
-            <label for='{{item.id}}-extreme-range'>{{localize
-                    'BW.weapon.extreme'
-                }}</label>
-        </div>
-        <div>
-            <input
-                id='{{item.id}}-number-range'
-                type='text'
-                name='system.maxRange'
-                value='{{system.maxRange}}'
-            />
-            <label for='{{item.id}}-number-range'>{{localize
-                    'BW.weapon.max'
-                }}</label>
-        </div>
-        <div>
-            <input
-                id='{{item.id}}-point-cost'
-                type='number'
-                class='exponent no-arrows wide'
-                name='system.pointCost'
-                value='{{system.pointCost}}'
-                data-dtype='Number'
-            />
-            <label
-                for='{{item.id}}-point-cost'
-                class='item-setting-label'
-            >{{localize 'BW.rpCost'}}</label>
+            <div class='dialog-row'>
+                <div class='form-group'>
+                    <span class='label'>{{localize 'BW.stargaze.weapon.integrity'}}</span>
+                    <div class='input-group'>
+                        <input type='number' name='system.integrity' value='{{system.integrity}}' class='short-input' />
+                        <span>/</span>
+                        <input type='number' name='system.integrityMax' value='{{system.integrityMax}}' class='short-input' />
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <div class='input-group'>
+                        <span class='label'>{{localize 'BW.stargaze.weapon.skillRepair'}}</span>
+                        <input class='medium-input' type='text' name='system.skillRepair' value='{{system.skillRepair}}' placeholder='{{localize 'BW.stargaze.weapon.repairSkillPlaceholder'}}' />
+                        <input type='hidden' name='system.skillRepairId' value='{{system.skillRepairId}}' />
+                    </div>
+                </div>
+            </div>
+            <div class='dialog-row'>
+                <div class='form-group'>
+                    <div class='input-group'>
+                        <span class='label'>{{localize 'BW.stargaze.weapon.skill'}}</span>
+                        <input class='medium-input' type='text' name='system.skill' value='{{system.skill}}' placeholder='{{localize 'BW.stargaze.weapon.skillPlaceholder'}}' />
+                        <input type='hidden' name='system.skillId' value='{{system.skillId}}' />
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <div class='input-group'>
+                        <span class='label'>{{localize 'BW.stargaze.weapon.manufacturer'}}</span>
+                        <input class='medium-input' type='text' name='system.manufacturer' value='{{system.manufacturer}}' placeholder='{{localize 'BW.stargaze.weapon.manufacturerPlaceholder'}}' />
+                    </div>
+                </div>
+            </div>
+            <div class="section-spacer"></div>
         </div>
     </div>
-    <hr />
-    <textarea name='system.description'>{{system.description}}</textarea>
+
+    <div class='flex-row'>
+        <hr class='dialog-section-before' /><div class='dialog-section-text'>{{localize 'BW.stargaze.weapon.section.combat'}} </div><hr class='dialog-section-after' />
+        <div class='section-content'>
+            <div class='dialog-row'>
+                <div class='form-group'>
+                    <span class='label'>{{localize 'BW.stargaze.weapon.range'}}</span>
+                    <div class='input-group'>
+                        <input type='number' name='system.rangeShort' value='{{system.rangeShort}}' class='short-input' title='{{localize 'BW.stargaze.weapon.rangeShort'}}' />
+                        <span>→</span>
+                        <input type='number' name='system.rangeMedium' value='{{system.rangeMedium}}' class='short-input' title='{{localize 'BW.stargaze.weapon.rangeMedium'}}' />
+                        <span>⇉</span>
+                        <input type='number' name='system.rangeLong' value='{{system.rangeLong}}' class='short-input' title='{{localize 'BW.stargaze.weapon.rangeLong'}}' />
+                    </div>
+                </div>
+                <div class='form-group ap-group'>
+                    <span class='label'>{{localize 'BW.stargaze.weapon.ap'}}</span>
+                    <div class='input-group'>
+                        <input type='number' name='system.APPerShot' value='{{system.APPerShot}}' class='short-input' title='{{localize 'BW.stargaze.weapon.apPerShot'}}' />
+                        <span>/</span>
+                        <input type='number' name='system.APPerReload' value='{{system.APPerReload}}' class='short-input' title='{{localize 'BW.stargaze.weapon.apPerReload'}}' />
+                    </div>
+                </div>
+            </div>
+            <div class='dialog-row'>
+                <div class='form-group'>
+                    <div class='input-group'>
+                        <span class='label'>{{localize 'BW.stargaze.weapon.skillMitigation'}}</span>
+                        <input class='medium-input' type='text' name='system.skillMitigation' value='{{system.skillMitigation}}' placeholder='{{localize 'BW.stargaze.weapon.mitigationSkillPlaceholder'}}' />
+                        <input type='hidden' name='system.skillMitigationId' value='{{system.skillMitigationId}}' />
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <div class='input-group'>
+                        <span class='label'>{{localize 'BW.stargaze.weapon.skillAvoidance'}}</span>
+                        <input class='medium-input' type='text' name='system.skillAvoidance' value='{{system.skillAvoidance}}' placeholder='{{localize 'BW.stargaze.weapon.avoidanceSkillPlaceholder'}}' />
+                        <input type='hidden' name='system.skillAvoidanceId' value='{{system.skillAvoidanceId}}' />
+                    </div>
+                </div>
+            </div>
+            <div class="section-spacer"></div>
+        </div>
+    </div>
+
+    <div class='flex-row'>
+        <hr class='dialog-section-before' /><div class='dialog-section-text'>{{localize 'BW.stargaze.weapon.section.ammo'}} </div><hr class='dialog-section-after' />
+        <div class='section-content'>
+            <div class='dialog-row'>
+                <div class='form-group'>
+                    <span class='label'>{{localize 'BW.stargaze.weapon.shots'}}</span>
+                    <div class='input-group'>
+                        <input type='number' name='system.chargeLevel' value='{{system.chargeLevel}}' class='short-input' />
+                        <span>/</span>
+                        <input type='number' name='system.chargeLevelMax' value='{{system.chargeLevelMax}}' class='short-input' />
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <div class='input-group'>
+                        <span class='label'>{{localize 'BW.stargaze.weapon.ammoType'}}</span>
+                        <input type='text' name='system.ammoType' value='{{system.ammoType}}' class='short-input' />
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <span class='label'>{{localize 'BW.stargaze.weapon.reloadType'}}</span>
+                    <select name='system.reloadType' class='medium-input'>
+                        <option value='per shot' {{#if (eq system.reloadType 'per shot')}}selected{{/if}}>{{localize 'BW.stargaze.weapon.perShot'}}</option>
+                        <option value='magazine' {{#if (eq system.reloadType 'magazine')}}selected{{/if}}>{{localize 'BW.stargaze.weapon.magazine'}}</option>
+                        <option value='battery' {{#if (eq system.reloadType 'battery')}}selected{{/if}}>{{localize 'BW.stargaze.weapon.battery'}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class='dialog-row'>
+                <div class='form-group'>
+                    <span class='label'>{{localize 'BW.stargaze.weapon.ammoPerReload'}}</span>
+                    <input type='number' name='system.AmmoPerReload' value='{{system.AmmoPerReload}}' class='short-input' />
+                </div>
+                <div class='form-group'>
+                    <span class='label'>{{localize 'BW.stargaze.weapon.chargePerAmmo'}}</span>
+                    <input type='number' name='system.chargePerAmmo' value='{{system.chargePerAmmo}}' class='short-input' />
+                </div>
+                <div class='form-group'>
+                    <span class='label'>{{localize 'BW.stargaze.weapon.shotsPerCharge'}}</span>
+                    <input type='number' name='system.shotsPerCharge' value='{{system.shotsPerCharge}}' class='short-input' />
+                </div>
+            </div>
+            <div class="section-spacer"></div>
+        </div>
+    </div>
+
+    <div class='flex-row'>
+        <hr class='dialog-section-before' /><div class='dialog-section-text'>{{localize 'BW.stargaze.weapon.section.desc'}} </div><hr class='dialog-section-after' />
+        <div class='section-content'>
+            <textarea name='system.description' placeholder='{{localize 'BW.stargaze.weapon.descriptionPlaceholder'}}'>{{system.description}}</textarea>
+        </div>
+    </div>
 </form>
