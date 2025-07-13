@@ -6,7 +6,7 @@ import { Armor } from '../items/armor';
 import { Possession, PossessionData } from '../items/possession';
 import { ReputationData } from '../items/reputation';
 import { TraitData, Trait } from '../items/trait';
-import { BWCharacterData } from './BWCharacter';
+import { BWCharacterData, Injury } from './BWCharacter';
 import { NpcData } from './Npc';
 import { AffiliationData } from '../items/affiliation';
 import { MeleeWeapon } from '../items/meleeWeapon';
@@ -157,6 +157,7 @@ export class BWActor<T extends Common = Common> extends Actor<
         this.aptitudeModifiers = {};
 
         this._calculateClumsyWeight();
+        this._calculateAP();
 
         this.forks = [];
         this.wildForks = [];
@@ -371,6 +372,76 @@ export class BWActor<T extends Common = Common> extends Actor<
             });
         }
     }
+
+    private _calculateAP() {
+        const charData =
+            this.type === 'character'
+                ? (this.system as unknown as BWCharacterData)
+                : undefined;
+
+        if (charData) {
+            // Find the highest value among the base attributes
+            const baseAttributes = [
+                charData.perception?.exp ?? 0,
+                charData.will?.exp ?? 0,
+                charData.power?.exp ?? 0,
+                charData.forte?.exp ?? 0,
+                charData.agility?.exp ?? 0,
+                charData.speed?.exp ?? 0,
+            ];
+            const highestBase = Math.max(...baseAttributes);
+
+            // AP is speed + highest base attribute
+            let apRecovery = (charData.speed?.exp ?? 0) + highestBase;
+
+            // If mobility is true, subtract 2
+            if (charData.injury.mobility) {
+                apRecovery -= 2;
+            }
+
+            // If incapacitated, set AP recovery to 0
+            if (charData.injury.incapacitated) {
+                apRecovery = 0;
+            }
+
+            // Ensure AP recovery is not negative
+            if (apRecovery < 0) {
+                apRecovery = 0;
+            }
+
+            //NEW
+            charData.actionPointsRecovery = apRecovery;
+        }
+    }
+
+    /*
+    private _updateInjuryPenalties() {
+        const charData =
+            this.type === 'character'
+                ? (this.system as unknown as BWCharacterData)
+                : undefined;
+
+        if (!charData) return;
+
+        // Calculate obstacle from numbness and pain (true = 1, false = 0)
+        const obstacle = (charData.numbness ? 1 : 0) + (charData.pain ? 1 : 0);
+
+        if (obstacle > 0) {
+            this._addRollModifier(
+                'all',
+                {
+                    obstacle,
+                    label: game.i18n.localize(
+                        'BW.stargaze.injury.injuryRollModifier'
+                    ),
+                    optional: true,
+                },
+                true
+            );
+        }
+    }
+
+    */
 
     private _calculateClumsyWeight() {
         const clumsyWeight: ClumsyWeightData = {
@@ -661,6 +732,14 @@ export interface Common {
     fate: number;
     persona: number;
     deeds: number;
+
+    actionPoints: number;
+    actionPointsRecovery: number;
+    cashCredits: number;
+    cashDollars: number;
+    rations: number;
+
+    injury: Injury;
 }
 
 export interface Ability extends TracksTests, DisplayClass {

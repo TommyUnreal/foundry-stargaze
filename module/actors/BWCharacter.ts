@@ -24,6 +24,7 @@ export class BWCharacter extends BWActor<BWCharacterData> {
 
         this._calculatePtgs(); // TODO: Remove from Stargaze
         this._calculateInjury();
+        super.prepareBaseData();
 
         const woundDice = this.system.ptgs.woundDice || 0;
         updateTestsNeeded(
@@ -635,18 +636,16 @@ interface Wound {
 }
 
 export interface Injury {
-    injury: {
-        hitPoints: number;
-        hitPointsMax: number;
-        bleeding: boolean;
-        pain: boolean;
-        mobility: boolean;
-        breathing: boolean;
-        numbness: boolean;
-        tough: boolean;
-        incapacitated: boolean;
-        penaltyDice: number;
-        nextRegeneration: string; // date
-        nextSurgery: string; // date
-    };
+    hitPoints: number;
+    hitPointsMax: number;
+    bleeding: boolean;
+    pain: boolean;
+    mobility: boolean;
+    breathing: boolean;
+    numbness: boolean;
+    tough: boolean;
+    incapacitated: boolean;
+    penaltyDice: number;
+    nextRegeneration: string; // date
+    nextSurgery: string; // date
 }

@@ -61,7 +61,7 @@ BW:
     challenging: Challenging
     routine: Routine
     tax: Tax
-    open: Open
+    open: Exploding
     fateSpent: Fate points spent on {statName}
     personaSpent: Persona points spent on {statName}
     deedsSpent: Deeds points spent on {statName}
@@ -498,6 +498,7 @@ BW:
       sectionText: Record for a Skill Test
       checkBoxLabel: Record Roll
     injury:
+      injuryRollModifier: Injury Roll Modifier
       hp: HP
       bleeding: Bleeding
       bleedingEffect: Forte test Ob 3 or -1 HP (hold SHIFT & roll).
@@ -561,3 +562,10 @@ BW:
       mitigationSkillPlaceholder: 'e.g., Armor'
       avoidanceSkillPlaceholder: 'e.g., Cover'
       descriptionPlaceholder: 'Enter weapon traits, description, history, and quirks...'
+    character:
+      actionPoints: 'AP'
+      actionPointsRecovery: 'AP/round'
+      cashCredits: 'Σ'
+      cashDollars: '₳'
+      rations: 'Rations'
+      note: 'Resources Notes'

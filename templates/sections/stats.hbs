@@ -14,8 +14,10 @@
     {{> "systems/burningwheel/templates/parts/rollable-item.hbs" statName="BW.forte" stat=system.forte namePrefix="system.forte" type="stat" taxName="system.forteTax" taxValue=system.forteTax taxDisabled=true}}
     {{> "systems/burningwheel/templates/parts/rollable-item.hbs" statName="BW.speed" stat=system.speed namePrefix="system.speed" type="stat"}}
     <div class="stats-footer flex-row">
-        <label>{{localize "BW.character.stride"}}</label><input type="number" placeholder="0" name="system.stride" value="{{system.stride}}">
-        <label>{{localize "BW.character.mountedStride"}}</label><input type="number" placeholder="0" name="system.mountedStride" value="{{system.mountedStride}}">
+        <label>{{localize "BW.stargaze.character.actionPoints"}}</label>
+        <input type="number" placeholder="0" name="system.actionPoints" value="{{system.actionPoints}}">
+        <label>{{localize "BW.stargaze.character.actionPointsRecovery"}}</label>
+        <input type="number" placeholder="0" name="system.actionPointsRecovery" value="{{system.actionPointsRecovery}}">
     </div>
 </div>
 {{/if}}

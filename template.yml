@@ -102,6 +102,12 @@ Actor:
       fate: 0
       persona: 0
       deeds: 0
+      actionPoints: 0
+      actionPointsRecovery: 0
+      cashCredits: 0
+      cashDollars: 0
+      provisions: 0
+      note: ''
     settings:
       settings:
         showSettings: false
