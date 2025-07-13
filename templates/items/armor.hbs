@@ -64,29 +64,16 @@
         </select>
 
         <label
-            for='{{item.id}}-select-untrained'
+            for='{{item.id}}-select-skill'
             class='item-setting-label'
-        >{{localize 'BW.armor.untrainedType'}}</label>
+        >{{localize 'BW.armor.skill'}}</label>
         <select
-            id='{{item.id}}-select-untrained'
-            name='system.untrainedPenalty'
-            value='{{system.untrainedPenalty}}'
+            id='{{item.id}}-select-skill'
+            name='system.skill'
+            value='{{system.skill}}'
         >
-            {{selectOptions penalties selected=system.untrainedPenalty localize=true}}
+            {{selectOptions skills selected=system.skill localize=true}}
         </select>
-
-        <label
-            for='{{item.id}}-point-cost'
-            class='item-setting-label'
-        >{{localize 'BW.rpCost'}}</label>
-        <input
-            id='{{item.id}}-point-cost'
-            type='number'
-            class='exponent no-arrows wide'
-            name='system.pointCost'
-            value='{{system.pointCost}}'
-            data-dtype='Number'
-        />
 
     </div>
     <hr />

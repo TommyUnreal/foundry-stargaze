@@ -139,7 +139,7 @@
     }
 
     .armor-grid {
-        grid-template-columns: 2.5em 2.75em 2.75em 6em 1fr;
+        grid-template-columns: 2.5em 2.75em 2.75em 6em 3.5em 1fr;
         row-gap: 0;
         column-gap: 0;
 
@@ -147,7 +147,7 @@
             background-color: rgba(black, 0.15);
         }
         .armor-row {
-            font-size: 16px;
+            font-size: 14px;
             text-align: center;
             border-bottom: 1px solid black;
             margin: 0 2px;

@@ -324,7 +324,7 @@
         {{/if}}
         {{#if armor.torso}}
         <div class="item-entry" data-action="rollArmor" data-item-id="{{armor.torso._id}}" data-location="Torso">
-            Torso: {{plusone (sub armor.torso.system.dice armor.torso.system.damageTorso)}}D</div>
+            Torso: {{sub (sub armor.torso.system.dice armor.torso.system.damageTorso)}}D</div>
         {{/if}}
         {{#if armor.leftArm}}
         <div class="item-entry" data-action="rollArmor" data-item-id="{{armor.leftArm._id}}" data-location="LeftArm">

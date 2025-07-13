@@ -23,6 +23,11 @@ export class ArmorSheet extends BWItemSheet {
             heavy: 'BW.armor.untrainedHeavy',
             plate: 'BW.armor.untrainedPlate',
         };
+        data.skills = {
+            armor: 'BW.armor.skillArmor',
+            barriers: 'BW.armor.skillBarriers',
+            both: 'BW.armor.skillBoth',
+        };
         return data;
     }
 }
@@ -32,4 +37,5 @@ interface MeleeSheetData extends BWItemSheetData {
     armorLocations: { [key: string]: string };
     shades: Record<string, string>;
     penalties: Record<string, string>;
+    skills: Record<string, string>;
 }

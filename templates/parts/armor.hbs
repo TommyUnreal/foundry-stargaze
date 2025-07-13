@@ -3,7 +3,8 @@
     <div class='armor-header'>{{localize 'BW.dice'}}</div>
     <div class='armor-header'>{{localize 'BW.armor.damage'}}</div>
     <div class='armor-header'>{{localize 'BW.armor.location'}}</div>
-    <div class='armor-header'>{{localize 'BW.type'}}</div>
+    <div class='armor-header'>{{localize 'BW.armor.skill'}}</div>
+    <div class='armor-header'>{{localize 'BW.name'}}</div>
 
     {{#if armor.head}}
         <button
@@ -32,6 +33,7 @@
         <div class='armor-row'></div>
     {{/if}}
     <div class='armor-row'>{{localize 'BW.armor.helm'}}</div>
+    <div class='armor-row'>{{armor.head.system.skill}}</div>
     <div class='armor-row'>{{armor.head.name}}</div>
 
     {{#if armor.torso}}
@@ -45,9 +47,7 @@
         >
             <i class='fas fa-dice'></i>
         </button>
-        <div class='armor-row'>{{armor.torso.system.shade}}{{plusone
-                armor.torso.system.dice
-            }}</div>
+        <div class='armor-row'>{{armor.torso.system.shade}}{{armor.torso.system.dice}}</div>
         <input
             type='number'
             class='armor-damage-input {{armor.torso.system.torsoDisplayClass}}'
@@ -61,6 +61,7 @@
         <div class='armor-row'></div>
     {{/if}}
     <div class='armor-row'>{{localize 'BW.armor.torso'}}</div>
+    <div class='armor-row'>{{armor.torso.system.skill}}</div>
     <div class='armor-row'>{{armor.torso.name}}</div>
 
     {{#if armor.leftArm}}
@@ -91,6 +92,7 @@
         <div class='armor-row'></div>
     {{/if}}
     <div class='armor-row'>{{localize 'BW.armor.leftArm'}}</div>
+    <div class='armor-row'>{{armor.leftArm.system.skill}}</div>
     <div class='armor-row'>{{armor.leftArm.name}}</div>
 
     {{#if armor.rightArm}}
@@ -121,6 +123,7 @@
         <div class='armor-row'></div>
     {{/if}}
     <div class='armor-row'>{{localize 'BW.armor.rightArm'}}</div>
+    <div class='armor-row'>{{armor.rightArm.system.skill}}</div>
     <div class='armor-row'>{{armor.rightArm.name}}</div>
 
     {{#if armor.leftLeg}}
@@ -151,6 +154,7 @@
         <div class='armor-row'></div>
     {{/if}}
     <div class='armor-row'>{{localize 'BW.armor.leftLeg'}}</div>
+    <div class='armor-row'>{{armor.leftLeg.system.skill}}</div>
     <div class='armor-row'>{{armor.leftLeg.name}}</div>
 
     {{#if armor.rightLeg}}
@@ -181,6 +185,7 @@
         <div class='armor-row'></div>
     {{/if}}
     <div class='armor-row'>{{localize 'BW.armor.rightLeg'}}</div>
+    <div class='armor-row'>{{armor.rightLeg.system.skill}}</div>
     <div class='armor-row'>{{armor.rightLeg.name}}</div>
 
     {{#if armor.shield}}
@@ -211,5 +216,6 @@
         <div class='armor-row'></div>
     {{/if}}
     <div class='armor-row'>{{localize 'BW.armor.shield'}}</div>
+    <div class='armor-row'>{{armor.shield.system.skill}}</div>
     <div class='armor-row'>{{armor.shield.name}}</div>
 </div>

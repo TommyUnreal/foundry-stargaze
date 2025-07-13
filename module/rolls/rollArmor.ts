@@ -24,7 +24,6 @@ export async function handleArmorRollEvent({
     const armorId = target.dataset.itemId || '';
     const armorItem = actor.items.get<Armor>(armorId);
     const location = target.dataset.location || '';
-    const chestBonus = location.toLowerCase() === 'torso' ? 1 : 0;
     const damage = armorItem?.system[`damage${location}`];
 
     const dialogData: ArmorDialogData = {
@@ -34,7 +33,7 @@ export async function handleArmorRollEvent({
         }),
         arthaDice: 0,
         bonusDice: 0,
-        armor: (armorItem?.system.dice || 0) + chestBonus,
+        armor: armorItem?.system.dice || 0,
         damage,
         showObstacles: true,
         showDifficulty: true,

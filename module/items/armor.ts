@@ -13,7 +13,7 @@ export class Armor extends BWItem<ArmorData> {
             this.system.damageHelm
         );
         this.system.torsoDisplayClass = this.calculateDisplayClass(
-            dice + 1,
+            dice,
             this.system.damageTorso
         );
         this.system.leftArmDisplayClass = this.calculateDisplayClass(
@@ -52,15 +52,14 @@ export class Armor extends BWItem<ArmorData> {
         }
 
         const locationAccessor = `system.damage${location}`;
+        // TEST
         const damage =
-            parseInt(
-                foundry.utils.getProperty(this, `system.${locationAccessor}`)
-            ) || 0;
+            parseInt(foundry.utils.getProperty(this, locationAccessor)) || 0;
         const updateData = {};
         let newDamage = 0;
         switch (this.system.quality) {
             case 'run of the mill':
-                newDamage = Math.min(this.system.dice, damage + 1);
+                newDamage = damage + 1;
                 updateData[locationAccessor] = newDamage;
                 await this.update(updateData);
                 return new Promise((r) => r(1));
@@ -70,14 +69,14 @@ export class Armor extends BWItem<ArmorData> {
                     reroll &&
                     reroll.dice[0].results.filter((r) => r.result === 1).length
                 ) {
-                    newDamage = Math.min(this.system.dice, damage + 1);
+                    newDamage = damage + 1;
                     updateData[locationAccessor] = newDamage;
                     await this.update(updateData);
                     return new Promise((r) => r(1));
                 }
                 return new Promise((r) => r(0));
             default:
-                newDamage = Math.min(this.system.dice, damage + num1s);
+                newDamage = this.system.dice;
                 updateData[locationAccessor] = newDamage;
                 await this.update(updateData);
                 return new Promise((r) => r(num1s));
@@ -118,6 +117,7 @@ export interface ArmorData extends DisplayClass, HasPointCost {
     swimmingPenalty: number;
     perceptionObservationPenalty: number;
     untrainedPenalty: 'none' | 'light' | 'heavy' | 'plate';
+    skill: string;
 
     shade: ShadeString;
 

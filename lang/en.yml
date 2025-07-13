@@ -1,4 +1,18 @@
 TYPES:
+  Item:
+    Belief: Belief
+    Instinct: Instinct
+    Relationship: Relationship
+    Reputation: Reputation
+    Affiliation: Affiliation
+    Skill: Skill
+    Trait: Trait
+    Spell: Spell
+    MeleeWeapon: Melee Weapon
+    RangedWeapon: Ranged Weapon
+    Armor: Armor
+    Possession: Possession
+    Property: Property
 BW:
   fate: Fate
   fateAcronym: F
@@ -173,6 +187,10 @@ BW:
     armorSwimmingPenalty: Armor Swimming Penalty
     untrainedArmorPenalty: Untrained Armor Penalty
     untrainedArmor: Untrained Armor
+    skill: Skill
+    skillArmor: Armor
+    skillBarriers: Barriers
+    skillBoth: Both
   possession:
     toolkit: Toolkit
     expended: Expended

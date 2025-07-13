@@ -696,7 +696,7 @@ export interface RollData {
 /* ============ Constants =============== */
 export const templates = {
     armorDialog: 'systems/burningwheel/templates/dialogs/armor-dialog.hbs',
-    armorMessage: 'systems/burningwheel/templates/chat/rolmessagel-.hbs',
+    armorMessage: 'systems/burningwheel/templates/chat/roll-message.hbs',
     rerollChatMessage: 'systems/burningwheel/templates/chat/reroll-message.hbs',
     pcRollDialog: 'systems/burningwheel/templates/dialogs/roll-dialog.hbs',
     pcRollMessage: 'systems/burningwheel/templates/chat/roll-message.hbs',

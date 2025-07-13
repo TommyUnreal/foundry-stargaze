@@ -377,6 +377,7 @@ Item:
     swimmingPenalty: 0
     perceptionObservationPenalty: 0
     shade: 'B'
+    skill: Armor
   reputation:
     description: ''
     dice: 0
