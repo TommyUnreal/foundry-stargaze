@@ -342,6 +342,14 @@
         <div class="item-entry" data-action="rollArmor" data-item-id="{{armor.rightLeg._id}}" data-location="RightLeg">
             Right Leg: {{sub armor.rightLeg.system.dice armor.rightArm.system.damageRightLeg}}D</div>
         {{/if}}
+        {{#if armor.coat}}
+        <div class="item-entry" data-action="rollArmor" data-item-id="{{armor.coat._id}}" data-location="Coat">
+            Coat: {{sub armor.coat.system.dice armor.coat.system.damageCoat}}D</div>
+        {{/if}}
+        {{#if armor.backpack}}
+        <div class="item-entry" data-action="rollArmor" data-item-id="{{armor.backpack._id}}" data-location="Backpack">
+            Backpack: {{sub armor.backpack.system.dice armor.backpack.system.damageBackpack}}D</div>
+        {{/if}}
         {{#if armor.shield}}
         <div class="item-entry" data-action="rollArmor" data-item-id="{{armor.shield._id}}" data-location="Shield">
             Shield: {{sub armor.shield.system.dice armor.shield.system.damageRightLeg}}D</div>

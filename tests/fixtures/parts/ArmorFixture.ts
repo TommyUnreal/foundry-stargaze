@@ -21,6 +21,8 @@ type InputFields =
     | 'left leg damage'
     | 'right leg damage'
     | 'speed obstacle penalty'
+    | 'coat damage'
+    | 'backpack damage'
     | 'shield damage';
 
 type CheckboxFields =
@@ -31,6 +33,8 @@ type CheckboxFields =
     | 'has right arm'
     | 'has left leg'
     | 'has right leg'
+    | 'has coat'
+    | 'has backpack'
     | 'has shield';
 
 type SelectFields = 'armor quality' | 'shade' | 'untrained penalty';

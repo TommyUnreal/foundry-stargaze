@@ -362,6 +362,10 @@ Item:
     damageLeftLeg: 0
     hasRightLeg: false
     damageRightLeg: 0
+    hasCoat: false
+    damageCoat: 0
+    hasBackpack: false
+    damageBackpack: 0
     hasShield: false
     damageShield: 0
     description: ''

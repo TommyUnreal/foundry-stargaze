@@ -136,6 +136,8 @@ export const armorLocations = [
     'left arm',
     'right leg',
     'left leg',
+    'coat',
+    'backpack',
     'shield',
 ];
 export const armorLocationSelect = toDictionary(armorLocations);

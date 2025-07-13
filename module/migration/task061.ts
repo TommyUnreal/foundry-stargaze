@@ -122,6 +122,8 @@ function updateArmor(item: Armor): Record<string, number> {
     updateToNumber(item.system.damageRightArm, 'damageRightArm', data);
     updateToNumber(item.system.damageRightLeg, 'damageRightLeg', data);
     updateToNumber(item.system.damageTorso, 'damageTorso', data);
+    updateToNumber(item.system.damageCoat, 'damageCoat', data);
+    updateToNumber(item.system.damageBackpack, 'damageBackpack', data);
     updateToNumber(item.system.damageShield, 'damageShield', data);
     return data;
 }

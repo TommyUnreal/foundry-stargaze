@@ -152,6 +152,8 @@ BW:
     leftLeg: Left Leg
     rightLeg: Right Leg
     shield: Shield
+    coat: Coat
+    backpack: Backpack
     armorDice: Armor Dice
     equipped: Equipped
     armorQuality: Armor Quality
@@ -166,6 +168,8 @@ BW:
     hasRightArm: Has Right Arm
     hasLeftLeg: Has Left Leg
     hasRightLeg: Has Right Leg
+    hasCoat: Has Coat
+    hasBackpack: Has Backpack
     hasShield: Has Shield
     helmDamage: Helm Damage
     torsoDamage: Torso Damage
@@ -173,6 +177,8 @@ BW:
     rightArmDamage: Right Arm Damage
     leftLegDamage: Left Leg Damage
     rightLegDamage: Right Leg Damage
+    coatDamage: Coat Damage
+    backpackDamage: Backpack Damage
     shieldDamage: Shield Damage
     perceptionObsPenalty: Perception/Observation Penalty
     healthForteFatiguePenalty: Health/Forte Fatigue Penalty

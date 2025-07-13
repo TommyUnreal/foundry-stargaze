@@ -32,6 +32,14 @@ export class Armor extends BWItem<ArmorData> {
             dice,
             this.system.damageRightLeg
         );
+        this.system.coatDisplayClass = this.calculateDisplayClass(
+            dice,
+            this.system.damageCoat
+        );
+        this.system.backpackDisplayClass = this.calculateDisplayClass(
+            dice,
+            this.system.damageBackpack
+        );
         this.system.shieldDisplayClass = this.calculateDisplayClass(
             dice,
             this.system.damageShield
@@ -103,6 +111,10 @@ export interface ArmorData extends DisplayClass, HasPointCost {
     damageLeftLeg: string;
     hasRightLeg: boolean;
     damageRightLeg: string;
+    hasCoat: boolean;
+    damageCoat: string;
+    hasBackpack: boolean;
+    damageBackpack: string;
     hasShield: boolean;
     damageShield: string;
 
@@ -127,5 +139,7 @@ export interface ArmorData extends DisplayClass, HasPointCost {
     rightArmDisplayClass?: string;
     leftLegDisplayClass?: string;
     rightLegDisplayClass?: string;
+    coatDisplayClass?: string;
+    backpackDisplayClass?: string;
     shieldDisplayClass?: string;
 }

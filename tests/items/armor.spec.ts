@@ -15,6 +15,8 @@ test('loads sheet data', async ({ items: { armor } }) => {
     await expect(sheet.getLabeledField('has helm')).toBeChecked();
     await expect(sheet.getLabeledField('has torso')).toBeChecked();
     await expect(sheet.getLabeledField('has left arm')).toBeChecked();
+    await expect(sheet.getLabeledField('has coat')).toBeChecked();
+    await expect(sheet.getLabeledField('has backpack')).toBeChecked();
     await expect(sheet.getLabeledField('has shield')).toBeChecked();
 
     await expect(sheet.getLabeledField('resource point cost')).toHaveValue(

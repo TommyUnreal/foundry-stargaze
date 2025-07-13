@@ -1,5 +1,5 @@
 <div class='item-grid armor-grid' aria-label="armor section">
-    <div class='armor-header'>~</div>
+    <div class='armor-header'>🛡️</div>
     <div class='armor-header'>{{localize 'BW.dice'}}</div>
     <div class='armor-header'>{{localize 'BW.armor.damage'}}</div>
     <div class='armor-header'>{{localize 'BW.armor.location'}}</div>
@@ -187,6 +187,62 @@
     <div class='armor-row'>{{localize 'BW.armor.rightLeg'}}</div>
     <div class='armor-row'>{{armor.rightLeg.system.skill}}</div>
     <div class='armor-row'>{{armor.rightLeg.name}}</div>
+
+    {{#if armor.coat}}
+        <button
+            aria-label="roll coat"
+            type='button'
+            class='rollable {{armor.coat.system.coatDisplayClass}}'
+            data-roll-type='armor'
+            data-item-id='{{armor.coat._id}}'
+            data-location='Coat'
+        >
+            <i class='fas fa-dice'></i>
+        </button>
+        <div class='armor-row'>{{armor.coat.system.shade}}{{armor.coat.system.dice}}</div>
+        <input
+            type='number'
+            class='armor-damage-input {{armor.coat.system.coatDisplayClass}}'
+            data-item-id='{{armor.coat._id}}'
+            data-binding='system.damageCoat'
+            value='{{armor.coat.system.damageCoat}}'
+        />
+    {{else}}
+        <button disabled><i class='fas fa-dice'></i></button>
+        <div class='armor-row'></div>
+        <div class='armor-row'></div>
+    {{/if}}
+    <div class='armor-row'>{{localize 'BW.armor.coat'}}</div>
+    <div class='armor-row'>{{armor.coat.system.skill}}</div>
+    <div class='armor-row'>{{armor.coat.name}}</div>
+
+    {{#if armor.backpack}}
+        <button
+            aria-label="roll backpack"
+            type='button'
+            class='rollable {{armor.backpack.system.backpackDisplayClass}}'
+            data-roll-type='armor'
+            data-item-id='{{armor.backpack._id}}'
+            data-location='Backpack'
+        >
+            <i class='fas fa-dice'></i>
+        </button>
+        <div class='armor-row'>{{armor.backpack.system.shade}}{{armor.backpack.system.dice}}</div>
+        <input
+            type='number'
+            class='armor-damage-input {{armor.backpack.system.backpackDisplayClass}}'
+            data-item-id='{{armor.backpack._id}}'
+            data-binding='system.damageBackpack'
+            value='{{armor.backpack.system.damageBackpack}}'
+        />
+    {{else}}
+        <button disabled><i class='fas fa-dice'></i></button>
+        <div class='armor-row'></div>
+        <div class='armor-row'></div>
+    {{/if}}
+    <div class='armor-row'>{{localize 'BW.armor.backpack'}}</div>
+    <div class='armor-row'>{{armor.backpack.system.skill}}</div>
+    <div class='armor-row'>{{armor.backpack.name}}</div>
 
     {{#if armor.shield}}
         <button

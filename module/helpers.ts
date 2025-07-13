@@ -111,6 +111,12 @@ export function getArmorLocationDataFromItem(i: Armor): { [k: string]: Armor } {
     if (i.system.hasLeftLeg) {
         data.leftLeg = i;
     }
+    if (i.system.hasCoat) {
+        data.coat = i;
+    }
+    if (i.system.hasBackpack) {
+        data.backpack = i;
+    }
     if (i.system.hasShield) {
         data.shield = i;
     }

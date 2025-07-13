@@ -15,6 +15,9 @@
         .equipment-weapon {
             @include colored-item(red);
         }
+        .equipment-melee {
+            @include colored-item(purple);
+        }
         .equipment-possession {
             @include colored-item(orange);
         }

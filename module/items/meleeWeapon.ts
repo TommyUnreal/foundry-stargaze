@@ -25,7 +25,7 @@ export class MeleeWeapon extends BWItem<MeleeWeaponData> {
                 ad.superb = Math.floor(baseDmg * 1.5);
             });
         }
-        this.system.cssClass = 'equipment-weapon';
+        this.system.cssClass = 'equipment-melee';
     }
 
     async getWeaponMessageData(attackIndex: number): Promise<string> {

@@ -382,6 +382,74 @@
             <input
                 type='checkbox'
                 class='hidden armor-location-checkbox'
+                id='{{item.id}}-checkbox-has-coat'
+                name='system.hasCoat'
+                {{checked system.hasCoat}}
+            />
+            <div class='armor-location-selection flex-column'>
+                <input
+                    type='checkbox'
+                    class='hidden armor-location-checkbox'
+                    {{checked system.hasCoat}}
+                />
+                <label
+                    for='{{item.id}}-checkbox-has-coat'
+                    class='armor-location-label'
+                >{{localize 'BW.armor.hasCoat'}}</label>
+            </div>
+            <div class='armor-location-details input-grid'>
+                <div>
+                    <input
+                        id='{{item.id}}-damageCoat'
+                        type='number'
+                        name='system.damageCoat'
+                        value='{{system.damageCoat}}'
+                        placeholder='0'
+                    />
+                    <label for='{{item.id}}-damageCoat'>{{localize
+                            'BW.armor.coatDamage'
+                        }}</label>
+                </div>
+            </div>
+        </div>
+        <div class='armor-location-group flex-row'>
+            <input
+                type='checkbox'
+                class='hidden armor-location-checkbox'
+                id='{{item.id}}-checkbox-has-backpack'
+                name='system.hasBackpack'
+                {{checked system.hasBackpack}}
+            />
+            <div class='armor-location-selection flex-column'>
+                <input
+                    type='checkbox'
+                    class='hidden armor-location-checkbox'
+                    {{checked system.hasBackpack}}
+                />
+                <label
+                    for='{{item.id}}-checkbox-has-backpack'
+                    class='armor-location-label'
+                >{{localize 'BW.armor.hasBackpack'}}</label>
+            </div>
+            <div class='armor-location-details input-grid'>
+                <div>
+                    <input
+                        id='{{item.id}}-damageBackpack'
+                        type='number'
+                        name='system.damageBackpack'
+                        value='{{system.damageBackpack}}'
+                        placeholder='0'
+                    />
+                    <label for='{{item.id}}-damageBackpack'>{{localize
+                            'BW.armor.backpackDamage'
+                        }}</label>
+                </div>
+            </div>
+        </div>
+        <div class='armor-location-group flex-row'>
+            <input
+                type='checkbox'
+                class='hidden armor-location-checkbox'
                 id='{{item.id}}-checkbox-has-shield'
                 name='system.hasShield'
                 {{checked system.hasShield}}
