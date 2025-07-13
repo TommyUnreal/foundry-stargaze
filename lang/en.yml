@@ -548,6 +548,8 @@ BW:
       nextRegeneration: Next Regeneration Available at
       nextSurgery: Next Surgery Available at
     weapon:
+      category: Ranged Weapon
+      loaded: Loaded
       section:
         basics: 'Basics Stats'
         combat: 'Combat Stats'

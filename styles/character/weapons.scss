@@ -84,7 +84,7 @@
     .ranged-grid {
         column-gap: 0;
         row-gap: 0;
-        grid-template-columns: 5fr repeat(5, 1fr) 2fr 3fr 1fr;
+        grid-template-columns: 5fr 1fr 2fr 2fr 2fr 3fr 1fr;
         .weapon-header {
             background-color: rgba(black, 0.15);
         }

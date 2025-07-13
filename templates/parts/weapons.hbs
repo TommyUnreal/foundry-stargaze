@@ -50,26 +50,47 @@
 </div>
 <hr>
 <div class="item-grid ranged-grid">
-    <div class="weapon-header">{{localize "BW.weapon.missile"}}</div>
-    <div class="weapon-header">{{localize "BW.weapon.incidentalAcronym"}}</div>
-    <div class="weapon-header">{{localize "BW.weapon.markAcronym"}}</div>
-    <div class="weapon-header">{{localize "BW.weapon.superbAcronym"}}</div>
-    <div class="weapon-header">{{localize "BW.weapon.optimalAcronym"}}</div>
-    <div class="weapon-header">{{localize "BW.weapon.extremeAcronym"}}</div>
-    <div class="weapon-header">{{localize "BW.weapon.maxAcronym"}}</div>
-    <div class="weapon-header">{{localize "BW.skill.skill"}}</div>
+    <div class="weapon-header">{{localize "BW.stargaze.weapon.category"}}</div>
+    <div class="weapon-header">{{localize "BW.stargaze.weapon.quality"}}</div>
+    <div class="weapon-header">{{localize "BW.stargaze.weapon.range"}}</div>
+    <div class="weapon-header">{{localize "BW.stargaze.weapon.integrity"}}</div>
+    <div class="weapon-header">{{localize "BW.stargaze.weapon.loaded"}}</div>
+    <div class="weapon-header">{{localize "BW.stargaze.weapon.skill"}}</div>
     <div class="weapon-header">💥</div>
     {{#each ranged as |r|}}
     <div class="weapon-group" aria-label="ranged weapon {{r.name}}">
         <div class="weapon-row weapon-name" data-roll-type="weapon" data-weapon-id="{{r._id}}" {{#if ../isOwner}}draggable="true"{{/if}}>
-            {{r.name}}
+            <div class="ims-pair">
+                <div class="weapon-ims">{{r.name}}</div>
+                <label class="weapon-dof">[{{r.system.manufacturer}}]</label>
+            </div>
         </div>
-        <div class="weapon-row"><div class="ims-pair"><div class="weapon-ims">{{clampWound r.system.shade r.system.incidental}}</div><label class="weapon-dof">{{r.system.incidentalLabel}}</label></div></div>
-        <div class="weapon-row"><div class="ims-pair"><div class="weapon-ims">{{clampWound r.system.shade r.system.mark}}</div><label class="weapon-dof">{{r.system.markLabel}}</label></div></div>
-        <div class="weapon-row"><div class="ims-pair"><div class="weapon-ims">{{clampWound r.system.shade r.system.superb}}</div><label class="weapon-dof">{{r.system.superbLabel}}</label></div></div>
-        <div class="weapon-row">{{r.system.optimalRange}}{{localize "BW.diceAcronym"}}</div>
-        <div class="weapon-row">{{r.system.extremeRange}}{{localize "BW.diceAcronym"}}</div>
-        <div class="weapon-row">{{titlecase r.system.maxRange}}</div>
+        <div class="weapon-row">
+            <div class="ims-pair">
+                <div class="weapon-ims">
+                    {{#if (gte r.system.weaponQuality 0)}}+{{/if}}{{r.system.weaponQuality}}
+                </div>
+                <label class="weapon-dof">MOD</label>
+            </div>
+        </div>
+        <div class="weapon-row">
+            <div class="ims-pair">
+                <div class="weapon-ims">{{r.system.rangeShort}}/{{r.system.rangeMedium}}/{{r.system.rangeLong}}</div>
+                <label class="weapon-dof">S/M/L</label>
+            </div>
+        </div>
+        <div class="weapon-row">
+            <div class="ims-pair">
+                <div class="weapon-ims">{{r.system.integrity}}/{{r.system.integrityMax}}</div>
+                <label class="weapon-dof">INT</label>
+            </div>
+        </div>
+        <div class="weapon-row">
+            <div class="ims-pair">
+                <div class="weapon-ims">{{r.system.chargeLevel}}/{{r.system.chargeLevelMax}}</div>
+                <label class="weapon-dof">[{{r.system.ammoType}}]</label>
+            </div>
+        </div>
         <div class="weapon-row">
             <select class="weapon-skill-select" data-item-id="{{r._id}}" data-binding="system.skillId" value="{{r.system.skillId}}">
                 {{selectOptions ../skills localize=true selected=r.system.skillId valueAttr="id" labelAttr="label"}}
