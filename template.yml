@@ -294,6 +294,29 @@ Item:
     skillId: ''
     shade: 'B'
     baseOb: 1
+    skill: 'Melee'
+    manufacturer: 'unique'
+    MSRP: 0
+    skillMitigation: 'Armor'
+    skillMitigationId: ''
+    skillAvoidance: 'Dodge'
+    skillAvoidanceId: ''
+    skillRepair: 'Jurry Rigging'
+    skillRepairId: ''
+    weaponQuality: 0
+    integrity: 0
+    integrityMax: 0
+    range: 1
+    APPerShot: 0
+    APPerReload: 0
+    usesAmmunition: false
+    ammoType: ''
+    shotsPerCharge: 1
+    chargePerAmmo: 1
+    AmmoPerReload: 0
+    chargeLevel: 0
+    chargeLevelMax: 0
+    reloadType: 'per shot'
     attacks:
       - attackName: ''
         power: 1

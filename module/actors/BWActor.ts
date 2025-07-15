@@ -14,6 +14,8 @@ import { RangedWeapon } from '../items/rangedWeapon';
 import { Spell } from '../items/spell';
 import { TypeMissing } from '../../types/index';
 
+//TODO: Fix Cannot read properties of undefined (reading 'mobility')
+
 export class BWActor<T extends Common = Common> extends Actor<
     Actor.Data & T,
     BWItem
@@ -346,10 +348,11 @@ export class BWActor<T extends Common = Common> extends Actor<
                 data: {},
                 img: constants.defaultImages.belief,
             },
-            {
+            //TEST
+            /*{
                 ...constants.bareFistData,
                 img: 'icons/skills/melee/unarmed-punch-fist-yellow-red.webp',
-            },
+            },*/
         ]);
     }
 
@@ -395,12 +398,12 @@ export class BWActor<T extends Common = Common> extends Actor<
             let apRecovery = (charData.speed?.exp ?? 0) + highestBase;
 
             // If mobility is true, subtract 2
-            if (charData.injury.mobility) {
+            if (charData.injury.mobility ?? false) {
                 apRecovery -= 2;
             }
 
             // If incapacitated, set AP recovery to 0
-            if (charData.injury.incapacitated) {
+            if (charData.injury.incapacitated ?? false) {
                 apRecovery = 0;
             }
 

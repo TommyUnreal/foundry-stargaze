@@ -39,14 +39,14 @@ export class BWActorSheet<
                 (CONST as TypeMissing).DOCUMENT_OWNERSHIP_LEVELS.OWNER,
             sorcerousSkillOptions: [
                 { id: '', label: 'None' },
-                ...this.actor.sorcerousSkills.map((s) => ({
+                ...(this.actor.sorcerousSkills ?? []).map((s) => ({
                     id: s._id,
                     label: s.name,
                 })),
             ],
             martialSkillOptions: [
                 { id: '', label: 'None' },
-                ...this.actor.martialSkills.map((s) => ({
+                ...(this.actor.martialSkills ?? []).map((s) => ({
                     id: s._id,
                     label: s.name,
                 })),

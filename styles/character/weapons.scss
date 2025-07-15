@@ -111,6 +111,36 @@
         }
     }
 
+    .melee-grid {
+        column-gap: 0;
+        row-gap: 0;
+        grid-template-columns: 5fr 1fr 2fr 2fr 2fr 3fr 1fr;
+        .weapon-header {
+            background-color: rgba(black, 0.15);
+        }
+
+        .weapon-group {
+            display: contents;
+        }
+
+        .weapon-group:nth-child(2n + 1) > .weapon-row {
+            background-color: rgba(black, 0.1);
+        }
+        .ims-pair {
+            line-height: 1em;
+
+            .weapon-ims {
+                line-height: 1.5em;
+                margin-bottom: -0.5em;
+            }
+            .weapon-dof {
+                text-align: center;
+                font-size: 10px;
+                line-height: 10px;
+            }
+        }
+    }
+
     .weapon-grid,
     .ranged-grid {
         .weapon-row {

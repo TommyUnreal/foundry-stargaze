@@ -548,7 +548,8 @@ BW:
       nextRegeneration: Next Regeneration Available at
       nextSurgery: Next Surgery Available at
     weapon:
-      category: Ranged Weapon
+      categoryRanged: Ranged Weapon
+      categoryMelee: Melee Weapon
       loaded: Loaded
       section:
         basics: 'Basics Stats'
@@ -588,6 +589,7 @@ BW:
       mitigationSkillPlaceholder: 'e.g., Armor'
       avoidanceSkillPlaceholder: 'e.g., Cover'
       descriptionPlaceholder: 'Enter weapon traits, description, history, and quirks...'
+      usesAmmunition: 'Uses Ammunition'
     character:
       actionPoints: 'AP'
       actionPointsRecovery: 'AP/round'
