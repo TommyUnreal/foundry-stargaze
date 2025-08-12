@@ -240,7 +240,7 @@ BW:
     learning: Learning
     wildFork: Wild FoRK
     wildForkHelp: This skill explodes on 1's and 6's when used as a FoRK.
-    open: Open
+    open: Exploding
     magical: Magical Skill
     magicalHelp: Special magical skills such as Dwarven Arts, Elven skill songs and spell songs. Determines cost for opening in character burner.
     training: Training Skill
@@ -518,6 +518,18 @@ BW:
     helpingDice: Helping Dice
     helpedWith: Helped with
   stargaze:
+    skills:
+      martial: Martial (Bojové)
+      spaceship: Spaceship (Vesmírná loď)
+      social: Social (Společenské)
+      craftsmanship: Craftsmanship (Řemeslné)
+      physical: Physical (Fyzické)
+      survival: Survival (Přežití)
+      medical: Medical (Medicína)
+      academic: Academic (Akademické)
+      common: Common (Prosté)
+      wises: Wises (Znalosti)
+      special: Special (Zvláštní)
     rollDialog:
       sectionText: Record for a Skill Test
       checkBoxLabel: Record Roll

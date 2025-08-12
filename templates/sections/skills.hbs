@@ -3,17 +3,147 @@
     <input type="checkbox" id="{{actor.id}}-collapseSkills" name="system.collapseSkills" class="section-collapse" {{ checked system.collapseSkills }}>
     <i class="fas fa-chevron-down"></i>
     {{/if}}
-    <label for="{{actor.id}}-collapseSkills" class="section-collapse-label clickable">{{ localize "BW.skill.skills"}}</label>
+    <label for="{{actor.id}}-collapseSkills" class="section-collapse-label clickable">{{ localize "BW.skill.skills" }}</label>
 </h2>
 {{#if system.collapseSkills}}{{else}}
-<div class="skills" aria-label="skills section">
-    {{#each skills as |skill|}}
-        {{> "systems/burningwheel/templates/parts/rollable-skill.hbs" skill=skill isOwner=../isOwner}}
-    {{/each}}
+
+    <!-- TODO: Needs to be generalized -->
+
+    <!-- Martial Skills -->
+    <div class="skill-category">
+        <h3 class="skill-category-header">{{localize "BW.stargaze.skills.martial"}}</h3>
+        <div class="skills" aria-label="skills section">
+        {{#each skills as |skill|}}
+            {{#if (eq skill.system.skilltype "martial")}}
+                {{> "systems/burningwheel/templates/parts/rollable-skill.hbs" skill=skill isOwner=isOwner}}
+            {{/if}}
+        {{/each}}
+        </div>
+    </div>
+
+    <!-- Spaceship Skills -->
+    <div class="skill-category">
+        <h3 class="skill-category-header">{{localize "BW.stargaze.skills.spaceship"}}</h3>
+        <div class="skills" aria-label="skills section">
+        {{#each skills as |skill|}}
+            {{#if (eq skill.system.skilltype "spaceship")}}
+                {{> "systems/burningwheel/templates/parts/rollable-skill.hbs" skill=skill isOwner=isOwner}}
+            {{/if}}
+        {{/each}}
+        </div>
+    </div>
+
+    <!-- Social Skills -->
+    <div class="skill-category">
+        <h3 class="skill-category-header">{{localize "BW.stargaze.skills.social"}}</h3>
+        <div class="skills" aria-label="skills section">
+        {{#each skills as |skill|}}
+            {{#if (eq skill.system.skilltype "social")}}
+                {{> "systems/burningwheel/templates/parts/rollable-skill.hbs" skill=skill isOwner=isOwner}}
+            {{/if}}
+        {{/each}}
+        </div>
+    </div>
+
+    <!-- Craftsmanship Skills -->
+    <div class="skill-category">
+        <h3 class="skill-category-header">{{localize "BW.stargaze.skills.craftsmanship"}}</h3>
+        <div class="skills" aria-label="skills section">
+        {{#each skills as |skill|}}
+            {{#if (eq skill.system.skilltype "craftsmanship")}}
+                {{> "systems/burningwheel/templates/parts/rollable-skill.hbs" skill=skill isOwner=isOwner}}
+            {{/if}}
+        {{/each}}
+        </div>
+    </div>
+
+    <!-- Physical Skills -->
+    <div class="skill-category">
+        <h3 class="skill-category-header">{{localize "BW.stargaze.skills.physical"}}</h3>
+        <div class="skills" aria-label="skills section">
+        {{#each skills as |skill|}}
+            {{#if (eq skill.system.skilltype "physical")}}
+                {{> "systems/burningwheel/templates/parts/rollable-skill.hbs" skill=skill isOwner=isOwner}}
+            {{/if}}
+        {{/each}}
+        </div>
+    </div>
+
+    <!-- Survival Skills -->
+    <div class="skill-category">
+        <h3 class="skill-category-header">{{localize "BW.stargaze.skills.survival"}}</h3>
+        <div class="skills" aria-label="skills section">
+        {{#each skills as |skill|}}
+            {{#if (eq skill.system.skilltype "survival")}}
+                {{> "systems/burningwheel/templates/parts/rollable-skill.hbs" skill=skill isOwner=isOwner}}
+            {{/if}}
+        {{/each}}
+        </div>
+    </div>
+
+    <!-- Medical Skills -->
+    <div class="skill-category">
+        <h3 class="skill-category-header">{{localize "BW.stargaze.skills.medical"}}</h3>
+        <div class="skills" aria-label="skills section">
+        {{#each skills as |skill|}}
+            {{#if (eq skill.system.skilltype "medical")}}
+                {{> "systems/burningwheel/templates/parts/rollable-skill.hbs" skill=skill isOwner=isOwner}}
+            {{/if}}
+        {{/each}}
+        </div>
+    </div>
+
+    <!-- Academic Skills -->
+    <div class="skill-category">
+        <h3 class="skill-category-header">{{localize "BW.stargaze.skills.academic"}}</h3>
+        <div class="skills" aria-label="skills section">
+        {{#each skills as |skill|}}
+            {{#if (eq skill.system.skilltype "academic")}}
+                {{> "systems/burningwheel/templates/parts/rollable-skill.hbs" skill=skill isOwner=isOwner}}
+            {{/if}}
+        {{/each}}
+        </div>
+    </div>
+
+    <!-- Common Skills -->
+    <div class="skill-category">
+        <h3 class="skill-category-header">{{localize "BW.stargaze.skills.common"}}</h3>
+        <div class="skills" aria-label="skills section">
+        {{#each skills as |skill|}}
+            {{#if (eq skill.system.skilltype "common")}}
+                {{> "systems/burningwheel/templates/parts/rollable-skill.hbs" skill=skill isOwner=isOwner}}
+            {{/if}}
+        {{/each}}
+        </div>
+    </div>
+
+    <!-- Wises Skills -->
+    <div class="skill-category">
+        <h3 class="skill-category-header">{{localize "BW.stargaze.skills.wises"}}</h3>
+        <div class="skills" aria-label="skills section">
+        {{#each skills as |skill|}}
+            {{#if (eq skill.system.skilltype "wises")}}
+                {{> "systems/burningwheel/templates/parts/rollable-skill.hbs" skill=skill isOwner=isOwner}}
+            {{/if}}
+        {{/each}}
+        </div>
+    </div>
+
+    <!-- Special Skills -->
+    <div class="skill-category">
+        <h3 class="skill-category-header">{{localize "BW.stargaze.skills.special"}}</h3>
+        <div class="skills" aria-label="skills section">
+        {{#each skills as |skill|}}
+            {{#if (eq skill.system.skilltype "special")}}
+                {{> "systems/burningwheel/templates/parts/rollable-skill.hbs" skill=skill isOwner=isOwner}}
+            {{/if}}
+        {{/each}}
+        </div>
+    </div>
+
     {{#if isOwner}}
     <div class="right-floating">
         <div class="add-button" data-action="addSkill"><i class="fas fa-plus"></i> {{localize "BW.character.addNew" type=(localize "BW.skill.skill")}}</div>
     </div>
     {{/if}}
-</div>
 {{/if}}

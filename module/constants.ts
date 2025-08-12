@@ -49,7 +49,18 @@ export const traitTypeSelect = {
 };
 
 export type SkillTypeString =
+    | 'martial'
+    | 'spaceship'
+    | 'social'
+    | 'craftsmanship'
+    | 'physical'
+    | 'survival'
+    | 'medical'
     | 'academic'
+    | 'common'
+    | 'wises'
+    | 'special';
+/*    | 'academic'
     | 'artisan'
     | 'artist'
     | 'craftsman'
@@ -64,27 +75,36 @@ export type SkillTypeString =
     | 'seafaring'
     | 'special'
     | 'social'
-    | 'sorcerous';
+    | 'sorcerous';*/
 
 export const skillTypes = [
-    'academic',
-    'artisan',
-    'artist',
-    'craftsman',
-    'forester',
     'martial',
-    'medicinal',
-    'military',
-    'musical',
-    'peasant',
-    'physical',
-    'schoolofthought',
-    'seafaring',
-    'special',
+    'spaceship',
     'social',
-    'sorcerous',
+    'craftsmanship',
+    'physical',
+    'survival',
+    'medical',
+    'academic',
+    'common',
+    'wises',
+    'special',
 ];
+
 export const skillTypeSelect = {
+    martial: 'BW.stargaze.skills.martial',
+    spaceship: 'BW.stargaze.skills.spaceship',
+    social: 'BW.stargaze.skills.social',
+    craftsmanship: 'BW.stargaze.skills.craftsmanship',
+    physical: 'BW.stargaze.skills.physical',
+    survival: 'BW.stargaze.skills.survival',
+    medical: 'BW.stargaze.skills.medical',
+    academic: 'BW.stargaze.skills.academic',
+    common: 'BW.stargaze.skills.common',
+    wises: 'BW.stargaze.skills.wises',
+    special: 'BW.stargaze.skills.special',
+};
+/*
     academic: 'BW.skill.academic',
     artisan: 'BW.skill.artisan',
     artist: 'BW.skill.artist',
@@ -101,7 +121,7 @@ export const skillTypeSelect = {
     special: 'BW.skill.special',
     social: 'BW.skill.social',
     sorcerous: 'BW.skill.sorcerous',
-};
+};*/
 
 export const skillRoots = [
     'power',
@@ -189,6 +209,19 @@ export const defaultImages = {
 };
 
 export const skillImages: { [k in SkillTypeString]: string } = {
+    martial: 'icons/skills/melee/weapons-crossed-swords-purple.webp',
+    spaceship: 'icons/vehicles/spaceship-rocket-flying-blue.webp',
+    social: 'icons/skills/social/diplomacy-handshake-yellow.webp',
+    craftsmanship: 'icons/skills/trades/smithing-anvil-silver-red.webp',
+    physical: 'icons/magic/control/buff-strength-muscle-damage-orange.webp',
+    survival: 'icons/magic/nature/leaf-elm-sparkle-glow-green.webp',
+    medical: 'icons/magic/life/cross-yellow-green.webp',
+    academic: 'icons/sundries/books/book-worn-blue.webp',
+    common: 'icons/sundries/documents/document-official-capital.webp',
+    wises: 'icons/sundries/documents/document-scroll-parchment.webp',
+    special: 'icons/sundries/books/book-worn-blue.webp',
+};
+/*
     academic: 'icons/sundries/documents/document-official-capital.webp',
     artist: 'icons/tools/hand/brush-paint-brown-white.webp',
     artisan: 'icons/tools/hand/chisel-steel-brown.webp',
@@ -205,7 +238,7 @@ export const skillImages: { [k in SkillTypeString]: string } = {
     special: 'icons/skills/trades/academics-investigation-puzzles.webp',
     social: 'icons/skills/social/diplomacy-handshake-yellow.webp',
     sorcerous: 'icons/magic/fire/flame-burning-hand-white.webp',
-};
+};*/
 
 export const RangeAndCoverActions: Record<string, string[]> = {
     'Move In': ['Close', 'Sneak In', 'Flank', 'Charge'],

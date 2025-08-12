@@ -208,6 +208,19 @@ function registerHelpers() {
             return html.replace(rgx, '$& selected');
         }
     );
+
+    Handlebars.registerHelper('filter', function (array, condition) {
+        const [key, value] = condition;
+        return array.filter((item) => item[key] === value);
+    });
+
+    Handlebars.registerHelper('eq', function (a, b) {
+        return a === b;
+    });
+
+    Handlebars.registerHelper('array', function (...args) {
+        return args.slice(0, -1); // Exclude the final `options` argument
+    });
 }
 
 Hooks.on('renderChatLog', (_app, html: JQuery, _data) => onChatLogRender(html));

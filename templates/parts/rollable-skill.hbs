@@ -71,7 +71,7 @@
         <input type="number" class="circle-input" placeholder="D" title="Deeds points spent on skill" data-item-id="{{skill._id}}" data-binding="system.deeds" value="{{skill.system.deeds}}">
         <input type="checkbox" class="hidden rollable-open-checkbox" id="{{skill._id}}-open" data-item-id="{{skill._id}}" data-binding="system.open" {{checked skill.system.open}}>
         <div class="rollable-open-toggle">
-            <label for="{{skill._id}}-open">Open</label>
+            <label for="{{skill._id}}-open">{{localize "BW.skill.open"}}</label>
         </div>
         {{#if isOwner}}
         <i class="fas fa-trash item-action-icon" data-action="delItem" data-id="{{skill._id}}"></i>

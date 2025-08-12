@@ -191,7 +191,7 @@ export class BWActor<T extends Common = Common> extends Actor<
                             !(i as SkillData).training
                         ) {
                             this.martialSkills.push(item as Skill);
-                        } else if ((i as SkillData).skilltype === 'sorcerous') {
+                        } else if ((i as SkillData).skilltype === 'special') {
                             this.sorcerousSkills.push(item as Skill);
                         } else if ((i as SkillData).skilltype === 'social') {
                             this.socialSkills.push(item as Skill);
