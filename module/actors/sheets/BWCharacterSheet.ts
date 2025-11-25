@@ -423,7 +423,6 @@ export class BWCharacterSheet extends BWActorSheet<
                     img: constants.defaultImages[id],
                 });
             case 'addAmmo':
-                ui.notifications?.notify('5 This shit works!');
                 return addNewItem({
                     actor: this.actor,
                     searchTitle: game.i18n.format('BW.character.addNew', {
