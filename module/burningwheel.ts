@@ -218,6 +218,10 @@ function registerHelpers() {
         return a === b;
     });
 
+    Handlebars.registerHelper('neq', function (a, b) {
+        return a !== b;
+    });
+
     Handlebars.registerHelper('array', function (...args) {
         return args.slice(0, -1); // Exclude the final `options` argument
     });

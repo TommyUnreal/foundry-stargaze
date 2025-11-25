@@ -26,6 +26,7 @@ export type ItemType =
     | 'melee weapon'
     | 'possession'
     | 'property'
+    | 'ammo'
     | 'ranged weapon'
     | 'relationship'
     | 'reputation'

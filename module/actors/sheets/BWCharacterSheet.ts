@@ -197,6 +197,7 @@ export class BWCharacterSheet extends BWActorSheet<
             '*[data-action="addSpell"]',
             '*[data-action="learnSpell"]',
             '*[data-action="addGear"]',
+            '*[data-action="addAmmo"]',
             '*[data-action="broadcast"]',
         ];
         html.find(selectors.join(', ')).on('click', (e) =>
@@ -413,6 +414,22 @@ export class BWCharacterSheet extends BWActorSheet<
                         'possession',
                         'property',
                     ],
+                    itemDataLeft: (_: Item) => '',
+                    itemDataMid: (i: Item) =>
+                        game.i18n.localize('BW.type') +
+                        ': ' +
+                        game.i18n.localize(`TYPES.Item.${i.type.titleCase()}`),
+                    baseData: { traittype: id },
+                    img: constants.defaultImages[id],
+                });
+            case 'addAmmo':
+                ui.notifications?.notify('5 This shit works!');
+                return addNewItem({
+                    actor: this.actor,
+                    searchTitle: game.i18n.format('BW.character.addNew', {
+                        type: game.i18n.localize('TYPES.Item.Ammo'),
+                    }),
+                    itemTypes: ['ammo'],
                     itemDataLeft: (_: Item) => '',
                     itemDataMid: (i: Item) =>
                         game.i18n.localize('BW.type') +

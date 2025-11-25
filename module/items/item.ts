@@ -5,6 +5,7 @@ import { InstinctSheet } from './sheets/instinct-sheet';
 import { MeleeWeaponSheet } from './sheets/melee-sheet';
 import { PossessionSheet } from './sheets/possession-sheet';
 import { PropertySheet } from './sheets/property-sheet';
+import { AmmoSheet } from './sheets/ammo-sheet';
 import { RangedWeaponSheet } from './sheets/ranged-sheet';
 import { RelationshipSheet } from './sheets/relationship-sheet';
 import { ReputationSheet } from './sheets/reputation-sheet';
@@ -20,6 +21,7 @@ import { AffiliationData } from './affiliation';
 import { ArmorData } from './armor';
 import { PossessionData } from './possession';
 import { PropertyData } from './property';
+import { AmmoData } from './ammo';
 import { RangedWeaponData } from './rangedWeapon';
 import { RelationshipData } from './relationship';
 import { ReputationData } from './reputation';
@@ -36,6 +38,7 @@ export * from './sheets/instinct-sheet';
 export * from './sheets/melee-sheet';
 export * from './sheets/possession-sheet';
 export * from './sheets/property-sheet';
+export * from './sheets/ammo-sheet';
 export * from './sheets/ranged-sheet';
 export * from './sheets/relationship-sheet';
 export * from './sheets/reputation-sheet';
@@ -136,6 +139,12 @@ export function RegisterItemSheets(): void {
         label: 'BW.sheet.property',
     });
 
+    Items.registerSheet(constants.systemName, AmmoSheet, {
+        types: ['ammo'],
+        makeDefault: true,
+        label: 'BW.sheet.ammo',
+    });
+
     Items.registerSheet(constants.systemName, MeleeWeaponSheet, {
         types: ['melee weapon'],
         makeDefault: true,
@@ -187,6 +196,7 @@ export type ItemType =
     | 'armor'
     | 'possession'
     | 'property'
+    | 'ammo'
     | 'relationship'
     | 'melee weapon'
     | 'ranged weapon'
@@ -203,6 +213,7 @@ export type BWItemDataTypes =
     | ArmorData
     | PossessionData
     | PropertyData
+    | AmmoData
     | RangedWeaponData
     | RelationshipData
     | ReputationData

@@ -194,6 +194,7 @@ export const defaultImages = {
     armor: 'icons/equipment/chest/breastplate-collared-steel-grey.webp',
     possession: 'icons/equipment/feet/boots-collared-rounded-brown.webp',
     property: 'icons/environment/settlement/house-two-stories-small.webp',
+    ammo: 'icons/weapons/ammunition/bullets-cartridge-shell-gray.webp',
     relationship: 'icons/environment/people/commoner.webp',
     'melee weapon': 'icons/weapons/swords/greatsword-crossguard-silver.webp',
     'ranged weapon': 'icons/weapons/bows/longbow-recurve-brown.webp',

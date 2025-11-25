@@ -75,6 +75,7 @@ const handlers: Record<string, (data: DragData) => MacroData | null> = {
 
     possession: CreateEditMacro,
     property: CreateEditMacro,
+    ammo: CreateEditMacro,
     armor: CreateEditMacro,
     'melee weapon': CreateEditMacro,
     'ranged weapon': CreateEditMacro,

@@ -13,6 +13,7 @@ TYPES:
     Armor: Armor
     Possession: Possession
     Property: Property
+    Ammo: Ammo
 BW:
   fate: Fate
   fateAcronym: F
@@ -70,6 +71,7 @@ BW:
     armor: Default Armor Sheet
     spell: Default Spell Sheet
     lifepath: Default Lifepath Sheet
+    ammo: Default Ammo Sheet
   rollable:
     difficult: Difficult
     challenging: Challenging
@@ -609,3 +611,5 @@ BW:
       cashDollars: '₳'
       rations: 'Rations'
       note: 'Resources Notes'
+      ammoSection: 'Ammunition'
+      ammo: Ammo

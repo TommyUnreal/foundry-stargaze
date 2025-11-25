@@ -13,18 +13,41 @@
     <div class="armor-misc flex-column">
         <div class="training-skills">
             <hr>
-            <h3>{{localize "BW.character.trainingSkills"}}</h3>
-            {{#each training as |t|}}
-            <div class="training-skill" data-item-id="{{t.id}}">
-                <div class="flex-row">
-                    <div class="training-skill-name">{{ t.name }}</div>
-                    {{#if ../isOwner}}
-                    <i class="fas fa-edit" data-action="editItem" data-id="{{t._id}}"></i>
-                    <i class="fas fa-trash" data-action="delItem" data-id="{{t._id}}"></i>
+            <h3>{{localize "BW.stargaze.character.ammoSection"}}</h3>
+                {{#each equipment as |e|}}
+                <div class="{{e.system.cssClass}}" {{#if ../isOwner}}draggable="true"{{/if}} data-id="{{e._id}}">
+
+                    {{#if (eq e.system.tag "ammo")}}
+                    <div class="ammo-row">
+                        <div class="ammo-name">{{e.name}}</div>
+                        <div class="ammo-amount">
+                            <input
+                                type="number"
+                                class="ammo-amount-input"
+                                min="0"
+                                data-item-id="{{e._id}}"
+                                data-binding="system.amount"
+                                value="{{e.system.amount}}"
+                            />
+                            <span class="ammo-amount-symbol">✖</span>
+                        </div>
+                        {{#if ../isOwner}}
+                            <div class="ammo-actions">
+                                <i class="fas fa-trash item-action-icon" data-action="delItem" data-id="{{e._id}}"></i>
+                                <i class="fas fa-edit item-action-icon" data-action="editItem" data-id="{{e._id}}"></i>
+                            </div>
+                        {{/if}}
+                    </div>
                     {{/if}}
+
                 </div>
-            </div>
-            {{/each}}
+                {{/each}}
+                <br />
+                {{#if isOwner}}
+                <div class="right-floating">
+                    <div class="add-button" data-action="addAmmo"><i class="fas fa-plus"></i> {{localize "BW.character.addNew" type=(localize "BW.stargaze.character.ammo")}}</div>
+                </div>
+                {{/if}}
         </div>
     </div>
     <div class="armor">

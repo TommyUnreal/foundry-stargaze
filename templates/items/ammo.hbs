@@ -1,0 +1,48 @@
+<form autocomplete='off' class='flex-column'>
+    <div class='flex-row'>
+        {{#if showImage}}
+            <img
+                class='item-image'
+                src='{{item.img}}'
+                title='{{item.name}}'
+                data-edit='img'
+            />
+        {{/if}}
+        <input
+            name='name'
+            type='text'
+            value='{{item.name}}'
+            class='item-sheet-name'
+        />
+    </div>
+    <div class='item-form-group'>
+        <label
+            for='{{item.id}}-amount'
+            class='item-setting-label'
+        >Amount</label>
+        <input
+            id='{{item.id}}-amount'
+            type='number'
+            min='0'
+            class='no-arrows wide'
+            name='system.amount'
+            value='{{system.amount}}'
+            data-dtype='Number'
+        />
+    </div>
+    <div class='item-form-group'>
+        <label
+            for='{{item.id}}-tag'
+            class='item-setting-label'
+        >Tag</label>
+        <select
+            id='{{item.id}}-tag'
+            name='system.tag'
+            class='wide'
+        >
+            <option value='ammo'>ammo</option>
+        </select>
+    </div>
+    <hr />
+    <textarea name='system.description'>{{system.description}}</textarea>
+</form>

@@ -196,6 +196,7 @@ Item:
     - armor
     - spell
     - lifepath
+    - ammo
   templates:
     arthaEarner:
       fate: false
@@ -284,6 +285,10 @@ Item:
     templates:
       - pointCost
     isWorkshop: false
+    description: ''
+  ammo:
+    amount: 0
+    tag: 'ammo'
     description: ''
   melee weapon:
     templates:
