@@ -87,12 +87,15 @@ export async function armorRollCallback(
     const rerollData = buildRerollData({ actor, roll, itemId: armorItem.id });
     rerollData.type = 'armor';
 
+    const damageTaken =
+        dice - numDice + parseInt(armorItem.system[`damage${location}`]);
+
     const extraInfo = damageAssigned
         ? game.i18n
               .localize('BW.roll.armorDiceLostMessage')
               .replace('{item}', armorItem.name)
               .replace('{location}', localizeLocation(location))
-              .replace('{number}', damageAssigned.toString())
+              .replace('{number}', damageTaken.toString())
               .replace(
                   '{dice}',
                   game.i18n.localize(damageAssigned > 1 ? 'BW.dice' : 'BW.die')
