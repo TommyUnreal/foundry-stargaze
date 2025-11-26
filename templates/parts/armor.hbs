@@ -6,26 +6,26 @@
     <div class='armor-header'>{{localize 'BW.armor.skill'}}</div>
     <div class='armor-header'>{{localize 'BW.name'}}</div>
 
-    {{#if armor.head}}
+    {{#if armor.helm}}
         <button
-            aria-label="roll head"
+            aria-label="roll helm"
             type='button'
-            class='rollable {{armor.head.system.helmDisplayClass}}'
+            class='rollable {{armor.helm.system.helmDisplayClass}}'
             data-roll-type='armor'
-            data-item-id='{{armor.head._id}}'
+            data-item-id='{{armor.helm._id}}'
             data-location='Helm'
         >
             <i class='fas fa-dice'></i>
         </button>
         <div
             class='armor-row'
-        >{{armor.head.system.shade}}{{armor.head.system.dice}}</div>
+        >{{armor.helm.system.shade}}{{armor.helm.system.dice}}</div>
         <input
             type='number'
-            class='armor-damage-input {{armor.head.system.helmDisplayClass}}'
-            data-item-id='{{armor.head._id}}'
+            class='armor-damage-input {{armor.helm.system.helmDisplayClass}}'
+            data-item-id='{{armor.helm._id}}'
             data-binding='system.damageHelm'
-            value='{{armor.head.system.damageHelm}}'
+            value='{{armor.helm.system.damageHelm}}'
         />
     {{else}}
         <button disabled><i class='fas fa-dice'></i></button>
@@ -33,8 +33,8 @@
         <div class='armor-row'></div>
     {{/if}}
     <div class='armor-row'>{{localize 'BW.armor.helm'}}</div>
-    <div class='armor-row'>{{armor.head.system.skill}}</div>
-    <div class='armor-row'>{{armor.head.name}}</div>
+    <div class='armor-row'>{{armor.helm.system.skill}}</div>
+    <div class='armor-row'>{{armor.helm.name}}</div>
 
     {{#if armor.torso}}
         <button
@@ -64,129 +64,160 @@
     <div class='armor-row'>{{armor.torso.system.skill}}</div>
     <div class='armor-row'>{{armor.torso.name}}</div>
 
-    {{#if armor.leftArm}}
+    {{#if armor.shoulders}}
         <button
-            aria-label="roll left arm"
+            aria-label="roll shoulders"
             type='button'
-            class='rollable {{armor.leftArm.system.leftArmDisplayClass}}'
+            class='rollable {{armor.shoulders.system.shouldersDisplayClass}}'
             data-roll-type='armor'
-            data-item-id='{{armor.leftArm._id}}'
-            data-location='LeftArm'
+            data-item-id='{{armor.shoulders._id}}'
+            data-location='Shoulders'
         >
             <i class='fas fa-dice'></i>
         </button>
         <div
             class='armor-row'
-        >{{armor.leftArm.system.shade}}{{armor.leftArm.system.dice}}</div>
+        >{{armor.shoulders.system.shade}}{{armor.shoulders.system.dice}}</div>
         <input
             type='number'
             class='armor-damage-input
-                {{armor.leftArm.system.leftArmDisplayClass}}'
-            data-item-id='{{armor.leftArm._id}}'
-            data-binding='system.damageLeftArm'
-            value='{{armor.leftArm.system.damageLeftArm}}'
+                {{armor.shoulders.system.shouldersDisplayClass}}'
+            data-item-id='{{armor.shoulders._id}}'
+            data-binding='system.damageShoulders'
+            value='{{armor.shoulders.system.damageShoulders}}'
         />
     {{else}}
         <button disabled><i class='fas fa-dice'></i></button>
         <div class='armor-row'></div>
         <div class='armor-row'></div>
     {{/if}}
-    <div class='armor-row'>{{localize 'BW.armor.leftArm'}}</div>
-    <div class='armor-row'>{{armor.leftArm.system.skill}}</div>
-    <div class='armor-row'>{{armor.leftArm.name}}</div>
+    <div class='armor-row'>{{localize 'BW.armor.shoulders'}}</div>
+    <div class='armor-row'>{{armor.shoulders.system.skill}}</div>
+    <div class='armor-row'>{{armor.shoulders.name}}</div>
 
-    {{#if armor.rightArm}}
+    {{#if armor.hands}}
         <button
-            aria-label="roll right arm"
+            aria-label="roll hands"
             type='button'
-            class='rollable {{armor.rightArm.system.rightArmDisplayClass}}'
+            class='rollable {{armor.hands.system.handsDisplayClass}}'
             data-roll-type='armor'
-            data-item-id='{{armor.rightArm._id}}'
-            data-location='RightArm'
+            data-item-id='{{armor.hands._id}}'
+            data-location='Hands'
         >
             <i class='fas fa-dice'></i>
         </button>
         <div
             class='armor-row'
-        >{{armor.rightArm.system.shade}}{{armor.rightArm.system.dice}}</div>
+        >{{armor.hands.system.shade}}{{armor.hands.system.dice}}</div>
         <input
             type='number'
             class='armor-damage-input
-                {{armor.rightArm.system.rightArmDisplayClass}}'
-            data-item-id='{{armor.rightArm._id}}'
-            data-binding='system.damageRightArm'
-            value='{{armor.rightArm.system.damageRightArm}}'
+                {{armor.hands.system.handsDisplayClass}}'
+            data-item-id='{{armor.hands._id}}'
+            data-binding='system.damageHands'
+            value='{{armor.hands.system.damageHands}}'
         />
     {{else}}
         <button disabled><i class='fas fa-dice'></i></button>
         <div class='armor-row'></div>
         <div class='armor-row'></div>
     {{/if}}
-    <div class='armor-row'>{{localize 'BW.armor.rightArm'}}</div>
-    <div class='armor-row'>{{armor.rightArm.system.skill}}</div>
-    <div class='armor-row'>{{armor.rightArm.name}}</div>
+    <div class='armor-row'>{{localize 'BW.armor.hands'}}</div>
+    <div class='armor-row'>{{armor.hands.system.skill}}</div>
+    <div class='armor-row'>{{armor.hands.name}}</div>
 
-    {{#if armor.leftLeg}}
+    {{#if armor.pants}}
         <button
-            aria-label="roll left leg"
+            aria-label="roll pants"
             type='button'
-            class='rollable {{armor.leftLeg.system.leftLegDisplayClass}}'
+            class='rollable {{armor.pants.system.pantsDisplayClass}}'
             data-roll-type='armor'
-            data-item-id='{{armor.leftLeg._id}}'
-            data-location='LeftLeg'
+            data-item-id='{{armor.pants._id}}'
+            data-location='Pants'
         >
             <i class='fas fa-dice'></i>
         </button>
         <div
             class='armor-row'
-        >{{armor.leftLeg.system.shade}}{{armor.leftLeg.system.dice}}</div>
+        >{{armor.pants.system.shade}}{{armor.pants.system.dice}}</div>
         <input
             type='number'
             class='armor-damage-input
-                {{armor.leftLeg.system.leftLegDisplayClass}}'
-            data-item-id='{{armor.leftLeg._id}}'
-            data-binding='system.damageLeftLeg'
-            value='{{armor.leftLeg.system.damageLeftLeg}}'
+                {{armor.pants.system.pantsDisplayClass}}'
+            data-item-id='{{armor.pants._id}}'
+            data-binding='system.damagePants'
+            value='{{armor.pants.system.damagePants}}'
         />
     {{else}}
         <button disabled><i class='fas fa-dice'></i></button>
         <div class='armor-row'></div>
         <div class='armor-row'></div>
     {{/if}}
-    <div class='armor-row'>{{localize 'BW.armor.leftLeg'}}</div>
-    <div class='armor-row'>{{armor.leftLeg.system.skill}}</div>
-    <div class='armor-row'>{{armor.leftLeg.name}}</div>
+    <div class='armor-row'>{{localize 'BW.armor.pants'}}</div>
+    <div class='armor-row'>{{armor.pants.system.skill}}</div>
+    <div class='armor-row'>{{armor.pants.name}}</div>
 
-    {{#if armor.rightLeg}}
+    {{#if armor.feet}}
         <button
-            aria-label="roll right leg"
+            aria-label="roll feet"
             type='button'
-            class='rollable {{armor.rightLeg.system.rightLegDisplayClass}}'
+            class='rollable {{armor.feet.system.feetDisplayClass}}'
             data-roll-type='armor'
-            data-item-id='{{armor.rightLeg._id}}'
-            data-location='RightLeg'
+            data-item-id='{{armor.feet._id}}'
+            data-location='Feet'
         >
             <i class='fas fa-dice'></i>
         </button>
         <div
             class='armor-row'
-        >{{armor.rightLeg.system.shade}}{{armor.rightLeg.system.dice}}</div>
+        >{{armor.feet.system.shade}}{{armor.feet.system.dice}}</div>
         <input
             type='number'
             class='armor-damage-input
-                {{armor.rightLeg.system.rightLegDisplayClass}}'
-            data-item-id='{{armor.rightLeg._id}}'
-            data-binding='system.damageRightLeg'
-            value='{{armor.rightLeg.system.damageRightLeg}}'
+                {{armor.feet.system.feetDisplayClass}}'
+            data-item-id='{{armor.feet._id}}'
+            data-binding='system.damageFeet'
+            value='{{armor.feet.system.damageFeet}}'
         />
     {{else}}
         <button disabled><i class='fas fa-dice'></i></button>
         <div class='armor-row'></div>
         <div class='armor-row'></div>
     {{/if}}
-    <div class='armor-row'>{{localize 'BW.armor.rightLeg'}}</div>
-    <div class='armor-row'>{{armor.rightLeg.system.skill}}</div>
-    <div class='armor-row'>{{armor.rightLeg.name}}</div>
+    <div class='armor-row'>{{localize 'BW.armor.feet'}}</div>
+    <div class='armor-row'>{{armor.feet.system.skill}}</div>
+    <div class='armor-row'>{{armor.feet.name}}</div>
+
+    {{#if armor.underwear}}
+        <button
+            aria-label="roll underwear"
+            type='button'
+            class='rollable {{armor.underwear.system.underwearDisplayClass}}'
+            data-roll-type='armor'
+            data-item-id='{{armor.underwear._id}}'
+            data-location='Underwear'
+        >
+            <i class='fas fa-dice'></i>
+        </button>
+        <div
+            class='armor-row'
+        >{{armor.underwear.system.shade}}{{armor.underwear.system.dice}}</div>
+        <input
+            type='number'
+            class='armor-damage-input
+                {{armor.underwear.system.underwearDisplayClass}}'
+            data-item-id='{{armor.underwear._id}}'
+            data-binding='system.damageUnderwear'
+            value='{{armor.underwear.system.damageUnderwear}}'
+        />
+    {{else}}
+        <button disabled><i class='fas fa-dice'></i></button>
+        <div class='armor-row'></div>
+        <div class='armor-row'></div>
+    {{/if}}
+    <div class='armor-row'>{{localize 'BW.armor.underwear'}}</div>
+    <div class='armor-row'>{{armor.underwear.system.skill}}</div>
+    <div class='armor-row'>{{armor.underwear.name}}</div>
 
     {{#if armor.coat}}
         <button
@@ -274,4 +305,35 @@
     <div class='armor-row'>{{localize 'BW.armor.shield'}}</div>
     <div class='armor-row'>{{armor.shield.system.skill}}</div>
     <div class='armor-row'>{{armor.shield.name}}</div>
+
+    {{#if armor.special}}
+        <button
+            aria-label="roll special"
+            type='button'
+            class='rollable {{armor.special.system.specialDisplayClass}}'
+            data-roll-type='armor'
+            data-item-id='{{armor.special._id}}'
+            data-location='Special'
+        >
+            <i class='fas fa-dice'></i>
+        </button>
+        <div
+            class='armor-row'
+        >{{armor.special.system.shade}}{{armor.special.system.dice}}</div>
+        <input
+            type='number'
+            class='armor-damage-input
+                {{armor.special.system.specialDisplayClass}}'
+            data-item-id='{{armor.special._id}}'
+            data-binding='system.damageSpecial'
+            value='{{armor.special.system.damageSpecial}}'
+        />
+    {{else}}
+        <button disabled><i class='fas fa-dice'></i></button>
+        <div class='armor-row'></div>
+        <div class='armor-row'></div>
+    {{/if}}
+    <div class='armor-row'>{{localize 'BW.armor.special'}}</div>
+    <div class='armor-row'>{{armor.special.system.skill}}</div>
+    <div class='armor-row'>{{armor.special.name}}</div>
 </div>

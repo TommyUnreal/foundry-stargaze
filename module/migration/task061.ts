@@ -117,14 +117,16 @@ function updateArmor(item: Armor): Record<string, number> {
     const data = {};
     updateToNumber(item.system.dice, 'dice', data);
     updateToNumber(item.system.damageHelm, 'damageHelm', data);
-    updateToNumber(item.system.damageLeftArm, 'damageLeftArm', data);
-    updateToNumber(item.system.damageLeftLeg, 'damageLeftLeg', data);
-    updateToNumber(item.system.damageRightArm, 'damageRightArm', data);
-    updateToNumber(item.system.damageRightLeg, 'damageRightLeg', data);
     updateToNumber(item.system.damageTorso, 'damageTorso', data);
+    updateToNumber(item.system.damageShoulders, 'damageShoulders', data);
+    updateToNumber(item.system.damageHands, 'damageHands', data);
+    updateToNumber(item.system.damagePants, 'damagePants', data);
+    updateToNumber(item.system.damageFeet, 'damageFeet', data);
+    updateToNumber(item.system.damageUnderwear, 'damageUnderwear', data);
     updateToNumber(item.system.damageCoat, 'damageCoat', data);
     updateToNumber(item.system.damageBackpack, 'damageBackpack', data);
     updateToNumber(item.system.damageShield, 'damageShield', data);
+    updateToNumber(item.system.damageSpecial, 'damageSpecial', data);
     return data;
 }
 

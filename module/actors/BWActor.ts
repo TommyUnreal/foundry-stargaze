@@ -491,7 +491,7 @@ export class BWActor<T extends Common = Common> extends Actor<
                         a.swimmingPenalty || 0
                     );
                 }
-                if (a.hasLeftArm || a.hasRightArm) {
+                /*if (a.hasLeftArm || a.hasRightArm) {
                     clumsyWeight.agilityPenalty = Math.max(
                         clumsyWeight.agilityPenalty,
                         a.agilityPenalty || 0
@@ -545,7 +545,7 @@ export class BWActor<T extends Common = Common> extends Actor<
                     ) {
                         clumsyWeight.untrainedHealth = 1;
                     }
-                }
+                }*/
             });
 
         if (charData) {

@@ -149,13 +149,15 @@ BW:
     location: Location
     helm: Head
     torso: Torso
-    leftArm: Left Arm
-    rightArm: Right Arm
-    leftLeg: Left Leg
-    rightLeg: Right Leg
-    shield: Shield
+    shoulders: Shoulders
+    hands: Hands
+    pants: Legs
+    feet: Feet
+    underwear: Underwear
     coat: Coat
+    shield: Shield
     backpack: Backpack
+    special: Special
     armorDice: Armor Dice
     equipped: Equipped
     armorQuality: Armor Quality
@@ -166,22 +168,26 @@ BW:
     untrainedPlate: Plate
     hasHelm: Has Helm
     hasTorso: Has Torso
-    hasLeftArm: Has Left Arm
-    hasRightArm: Has Right Arm
-    hasLeftLeg: Has Left Leg
-    hasRightLeg: Has Right Leg
+    hasShoulders: Has Shoulders
+    hasHands: Has Hands
+    hasPants: Has Legs
+    hasFeet: Has Feet
+    hasUnderwear: Has Underwear
     hasCoat: Has Coat
     hasBackpack: Has Backpack
     hasShield: Has Shield
+    hasSpecial: Has Special
     helmDamage: Helm Damage
     torsoDamage: Torso Damage
-    leftArmDamage: Left Arm Damage
-    rightArmDamage: Right Arm Damage
-    leftLegDamage: Left Leg Damage
-    rightLegDamage: Right Leg Damage
+    shouldersDamage: Shoulders Damage
+    handsDamage: Hands Damage
+    pantsDamage: Legs Damage
+    feetDamage: Feet Damage
+    underwearDamage: Underwear Damage
     coatDamage: Coat Damage
     backpackDamage: Backpack Damage
     shieldDamage: Shield Damage
+    specialDamage: Special Damage
     perceptionObsPenalty: Perception/Observation Penalty
     healthForteFatiguePenalty: Health/Forte Fatigue Penalty
     stealthyPenalty: Stealthy Penalty

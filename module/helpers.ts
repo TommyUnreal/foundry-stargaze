@@ -94,22 +94,25 @@ export function getArmorLocationDataFromItem(i: Armor): { [k: string]: Armor } {
     }
     const data: StringIndexedObject<Armor> = {};
     if (i.system.hasHelm) {
-        data.head = i;
+        data.helm = i;
     }
     if (i.system.hasTorso) {
         data.torso = i;
     }
-    if (i.system.hasLeftArm) {
-        data.leftArm = i;
+    if (i.system.hasShoulders) {
+        data.shoulders = i;
     }
-    if (i.system.hasRightArm) {
-        data.rightArm = i;
+    if (i.system.hasHands) {
+        data.hands = i;
     }
-    if (i.system.hasRightLeg) {
-        data.rightLeg = i;
+    if (i.system.hasPants) {
+        data.pants = i;
     }
-    if (i.system.hasLeftLeg) {
-        data.leftLeg = i;
+    if (i.system.hasFeet) {
+        data.feet = i;
+    }
+    if (i.system.hasUnderwear) {
+        data.underwear = i;
     }
     if (i.system.hasCoat) {
         data.coat = i;
@@ -119,6 +122,9 @@ export function getArmorLocationDataFromItem(i: Armor): { [k: string]: Armor } {
     }
     if (i.system.hasShield) {
         data.shield = i;
+    }
+    if (i.system.hasSpecial) {
+        data.special = i;
     }
     return data;
 }

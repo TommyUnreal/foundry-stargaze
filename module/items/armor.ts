@@ -16,21 +16,25 @@ export class Armor extends BWItem<ArmorData> {
             dice,
             this.system.damageTorso
         );
-        this.system.leftArmDisplayClass = this.calculateDisplayClass(
+        this.system.shouldersDisplayClass = this.calculateDisplayClass(
             dice,
-            this.system.damageLeftArm
+            this.system.damageShoulders
         );
-        this.system.rightArmDisplayClass = this.calculateDisplayClass(
+        this.system.handsDisplayClass = this.calculateDisplayClass(
             dice,
-            this.system.damageRightArm
+            this.system.damageHands
         );
-        this.system.leftLegDisplayClass = this.calculateDisplayClass(
+        this.system.pantsDisplayClass = this.calculateDisplayClass(
             dice,
-            this.system.damageLeftLeg
+            this.system.damagePants
         );
-        this.system.rightLegDisplayClass = this.calculateDisplayClass(
+        this.system.feetDisplayClass = this.calculateDisplayClass(
             dice,
-            this.system.damageRightLeg
+            this.system.damageFeet
+        );
+        this.system.underwearDisplayClass = this.calculateDisplayClass(
+            dice,
+            this.system.damageUnderwear
         );
         this.system.coatDisplayClass = this.calculateDisplayClass(
             dice,
@@ -43,6 +47,10 @@ export class Armor extends BWItem<ArmorData> {
         this.system.shieldDisplayClass = this.calculateDisplayClass(
             dice,
             this.system.damageShield
+        );
+        this.system.specialDisplayClass = this.calculateDisplayClass(
+            dice,
+            this.system.damageSpecial
         );
     }
 
@@ -103,20 +111,24 @@ export interface ArmorData extends DisplayClass, HasPointCost {
     damageHelm: string;
     hasTorso: boolean;
     damageTorso: string;
-    hasLeftArm: boolean;
-    damageLeftArm: string;
-    hasRightArm: boolean;
-    damageRightArm: string;
-    hasLeftLeg: boolean;
-    damageLeftLeg: string;
-    hasRightLeg: boolean;
-    damageRightLeg: string;
+    hasShoulders: boolean;
+    damageShoulders: string;
+    hasHands: boolean;
+    damageHands: string;
+    hasPants: boolean;
+    damagePants: string;
+    hasFeet: boolean;
+    damageFeet: string;
+    hasUnderwear: boolean;
+    damageUnderwear: string;
     hasCoat: boolean;
     damageCoat: string;
     hasBackpack: boolean;
     damageBackpack: string;
     hasShield: boolean;
     damageShield: string;
+    hasSpecial: boolean;
+    damageSpecial: string;
 
     // clumsy weight info
     agilityPenalty: number;
@@ -135,11 +147,13 @@ export interface ArmorData extends DisplayClass, HasPointCost {
 
     helmDisplayClass?: string;
     torsoDisplayClass?: string;
-    leftArmDisplayClass?: string;
-    rightArmDisplayClass?: string;
-    leftLegDisplayClass?: string;
-    rightLegDisplayClass?: string;
+    shouldersDisplayClass?: string;
+    handsDisplayClass?: string;
+    pantsDisplayClass?: string;
+    feetDisplayClass?: string;
+    underwearDisplayClass?: string;
     coatDisplayClass?: string;
     backpackDisplayClass?: string;
     shieldDisplayClass?: string;
+    specialDisplayClass?: string;
 }

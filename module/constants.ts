@@ -150,16 +150,19 @@ export const gearQualitySelect = {
 export type QualityString = 'basic' | 'superior' | 'run of the mill' | 'poor';
 
 export const armorLocations = [
-    'head',
+    'helm',
     'torso',
-    'right arm',
-    'left arm',
-    'right leg',
-    'left leg',
+    'shoulders',
+    'hands',
+    'pants',
+    'feet',
+    'underwear',
     'coat',
     'backpack',
     'shield',
+    'special',
 ];
+
 export const armorLocationSelect = toDictionary(armorLocations);
 
 export const equipmentSheetOrder = {
